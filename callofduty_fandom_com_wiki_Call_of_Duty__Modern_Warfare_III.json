@@ -1,0 +1,946 @@
+[
+  {
+    "category": "Campaign Levels of Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Missions",
+        "data": [
+          "Operation 627",
+          "Precious Cargo",
+          "Reactor",
+          "Payload",
+          "Deep Cover",
+          "Passenger",
+          "Crash Site",
+          "Flashpoint",
+          "Oligarch",
+          "Highrise",
+          "Frozen Tundra",
+          "Gora Dam",
+          "Danger Close",
+          "Trojan Horse"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Characters in Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Task Force 141",
+        "data": [
+          "John Price",
+          "Simon \"Ghost\" Riley",
+          "Kyle \"Gaz\" Garrick",
+          "Johnny \"Soap\" MacTavish"
+        ]
+      },
+      {
+        "subCategory": "Chimera",
+        "data": [
+          "Nikolai"
+        ]
+      },
+      {
+        "subCategory": "Shadow Company",
+        "data": [
+          "Phillip Graves",
+          "Shadow Gunner"
+        ]
+      },
+      {
+        "subCategory": "United States Army",
+        "data": [
+          "Herschel Shepherd"
+        ]
+      },
+      {
+        "subCategory": "Konni Group",
+        "data": [
+          "Vladimir Makarov",
+          "Milena Romanova",
+          "Andrei Nolan",
+          "Ivan Alexxeve",
+          "Rook",
+          "Nestor Gustev"
+        ]
+      },
+      {
+        "subCategory": "SAS",
+        "data": [
+          "Burns"
+        ]
+      },
+      {
+        "subCategory": "Multiplayer",
+        "data": [
+          "Carlos \"KillSwitch\"",
+          "Zombie Santa"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Factions in Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Playable",
+        "data": [
+          "",
+          "Central Intelligence Agency",
+          "",
+          "Task Force 141",
+          "Bravo Team",
+          "",
+          "Special Air Service",
+          "Bravo Team",
+          "",
+          "Konni Group",
+          "Alpha Team",
+          "",
+          "Shadow Company",
+          "",
+          "Urzikstan Liberation Force",
+          "",
+          "SpecGru",
+          "",
+          "Task Force 141",
+          "",
+          "U.S. Army Rangers",
+          "",
+          "U.S. Navy SEALs",
+          "",
+          "KorTac",
+          "",
+          "Spetsnaz",
+          "",
+          "Militia",
+          "",
+          "OpFor",
+          "",
+          "Operation Deadbolt"
+        ]
+      },
+      {
+        "subCategory": "Hostile",
+        "data": [
+          "",
+          "Konni Group",
+          "Inner Circle",
+          "",
+          "Kastovian Army",
+          "Zordaya Prison Complex Guards",
+          "",
+          "Zombies",
+          "",
+          "Terminus Outcomes"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Weapons of Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Assault Rifles",
+        "data": [
+          "SVA 545",
+          "MTZ-556",
+          "Holger 556",
+          "MCW",
+          "DG-56",
+          "FR 5.56",
+          "RAM-7",
+          "BP50",
+          "BAL-27",
+          "STG44",
+          "M4",
+          "TAQ-56",
+          "Kastov 762",
+          "STB 556",
+          "Lachmann-556",
+          "M16",
+          "Kastov 545",
+          "Kastov-74u",
+          "M13B",
+          "Chimera",
+          "ISO Hemlock",
+          "Tempus Razorback",
+          "FR Avancer",
+          "M13C",
+          "TR-76 Geist"
+        ]
+      },
+      {
+        "subCategory": "Submachine Guns",
+        "data": [
+          "Striker",
+          "WSP Swarm",
+          "AMR9",
+          "WSP-9",
+          "Rival-9",
+          "Striker 9",
+          "HRM-9",
+          "RAM-9",
+          "FJX Horus",
+          "Superi 46",
+          "Static-HV",
+          "VEL 46",
+          "PDSW 528",
+          "Fennec 45",
+          "MX9",
+          "Lachmann Sub",
+          "Vaznev-9K",
+          "FSS Hurricane",
+          "Minibak",
+          "BAS-P",
+          "ISO 45",
+          "Lachmann Shroud",
+          "ISO 9mm"
+        ]
+      },
+      {
+        "subCategory": "Light Machine Guns",
+        "data": [
+          "Pulemyot 762",
+          "DG-58 LSW",
+          "Holger 26",
+          "Bruen Mk9",
+          "TAQ Eradicator",
+          "TAQ Evolvere",
+          "Kastov LSW",
+          "SAKIN MG38",
+          "RAAL MG",
+          "HCR 56",
+          "556 Icarus",
+          "RPK",
+          "RAPP H"
+        ]
+      },
+      {
+        "subCategory": "Sniper Rifles",
+        "data": [
+          "KATT-AMR",
+          "Longbow",
+          "KV Inhibitor",
+          "XRK Stalker",
+          "MORS",
+          "MCPR-300",
+          "Signal 50",
+          "LA-B 330",
+          "SP-X 80",
+          "Victus XMR",
+          "FJX Imperium",
+          "Carrack .300"
+        ]
+      },
+      {
+        "subCategory": "Launchers",
+        "data": [
+          "RGL-80",
+          "Stormender",
+          "Torque 35",
+          "PILA",
+          "STRELA-P",
+          "JOKR",
+          "RPG-7"
+        ]
+      },
+      {
+        "subCategory": "Special",
+        "data": [
+          "Minigun"
+        ]
+      },
+      {
+        "subCategory": "Attachments",
+        "data": [
+          "Photonic Charge Barrel",
+          "JAK Bullseye",
+          "Cronen Intlas MSP-12",
+          "JAK Glassless Optic",
+          "TPS Incendio Reflex",
+          "Intlas CAS-14",
+          "KR Intlas LSJ-3",
+          "XTEN Intlas AS-7",
+          "Slate Reflector",
+          "XTEN ERX-10 Mini",
+          "MORS Dot Sight",
+          "Slimline Pro",
+          "SZ Mini",
+          "Cronen Mini Dot",
+          "Cronen Mini Pro",
+          "SZ Sigma-IV Optic",
+          "SZ Minitac-40",
+          "KR Minitac-40 Riser",
+          "FSS Spectre Microtherm",
+          "QTG Reflex Sight",
+          "Caucasus Reflex Sight",
+          "Nydar Model 2023",
+          "Mk. 3 Reflector",
+          "Dragon's Eye Optic",
+          "Quarters Classic Reflex",
+          "JAK NRG-IV Optic",
+          "XRK On-Point Optic",
+          "AIM OP-V4",
+          "DF105 Reflex Sight",
+          "Monocle CT90",
+          "Corvus SOL-76",
+          "SZ Recharge-DX",
+          "SZ SRO-7",
+          "Corio RE-X Pro",
+          "KR V4 1x Riser",
+          "Chrios Holo",
+          "Corio Enforcer Optic",
+          "SZ Lonewolf Optic",
+          "Kazan-Holo",
+          "SZ Battle Optic",
+          "Corvus Downrange-00",
+          "XTEN Angel-40",
+          "SZ Holotherm",
+          "AW Gen.1 Optic",
+          "Corio ELT-10 2.5x",
+          "KR Mortis Precision 2.5x",
+          "Corio Eagleseye 2.5x",
+          "SL Truesight 2.5x",
+          "Holo-Craft Optic",
+          "KR Marauder 9 Riser",
+          "TOS Nightfall 2.5x Thermal Optic",
+          "AOK 4.0x RQ-9 Recon",
+          "TX4 Havoc",
+          "VLK 4.0 Optic",
+          "Schlager 3.4x",
+          "FORGE TAC Delta 4",
+          "Cronen Zero-P Optic",
+          "SZ Bullseye Optic",
+          "SZ Aggressor-IR Optic",
+          "Schlager Night View",
+          "VX350 Thermal Optic",
+          "Teplo-OP3 Scope",
+          "Heinrichter Hybrid Scope",
+          "SZ HM5 Precision Hybrid Optic",
+          "Corvus Ghostview",
+          "DR582 Hybrid Sight",
+          "Hybrid Firepoint",
+          "SZ Vortex-90",
+          "BPZ40 Hybrid",
+          "SZ Oscar-9",
+          "Angel-40 4.8x",
+          "Thermo-Optic x9",
+          "Teplo Clear Shot",
+          "FTAC Charlie7",
+          "HMW-20 Optic",
+          "Luca Bandera Scope",
+          "DS Farsight 11",
+          "3x RFL-Optic",
+          "Drexsom Prime-90",
+          "ARES Clear Shot",
+          "Vigilant-30 C-Iron",
+          "Sightmax Clear Shot",
+          "DXS Coriolis V4",
+          "Lachmann Impact 9",
+          "SP-X 80 6.6x",
+          "FTAC Locus SP",
+          "Luca Field-6",
+          "SZ Heatsource 800",
+          "Hurricane 9 Variable Optic",
+          "SZ Ultra 11.5x",
+          "MCPR-300 9.5x",
+          "Victus 13x",
+          "Imperium 12x",
+          "Carrack .300 11x",
+          "Akilina LR-Stalk Optic",
+          "KR KATT-50 8x Scope",
+          "Journeyman-32 Scope",
+          "6x Short-Zoom Optic",
+          "MORS Hexer Optic",
+          "Signal 50 8x",
+          "Corio 13x VRS",
+          "6.3x-14x Carrack",
+          "Corio SZ-HS 800",
+          "Raptor-FVM40",
+          "JAK Cutthroat",
+          "TTL-GS 40",
+          "Burrow 500 Drill Charge",
+          "JAK Purifier",
+          "JAK Limb Ripper",
+          "JAK Slash",
+          "Paracord Grip",
+          "JAK BFB",
+          "Quartermaster Suppressor",
+          "Extended Mags",
+          "High Capacity Magazines",
+          "Drum Magazines",
+          "Small Magazine",
+          "JAK Raven Kit",
+          "JAK Nightshade Rifle Kit",
+          "Broodmother .45 Kit",
+          "JAK Heretic Carbine Kit",
+          "JAK Annihilator Bullpup Kit",
+          "MCW 6.8 Full-Auto Conversion",
+          "JAK Ferocity Carbine Kit",
+          "XRK IP-V2 Conversion Kit",
+          "WSP Akimbo Brace Stock",
+          "JAK Ettin Double Barrel Kit",
+          "JAK Thunder LMG Kit",
+          "JAK Signal Burst",
+          "JAK Beholder Rifle Kit",
+          "JAK Headhunter Carbine Conversion",
+          "JAK Burnout Kit",
+          "JAK Tyrant 762 Kit",
+          "JAK Backsaw Kit",
+          "JAK Maglift Kit",
+          "JAK Outlaw-277 Kit",
+          "JAK Revenger Kit",
+          "JAK Jawbreaker",
+          "JAK Shadow Titan Kit",
+          "JAK Patriot",
+          "JAK Wardens",
+          "JAK Atlas Kit",
+          "JAK Harbinger Kit",
+          "JAK Gunslinger",
+          "JAK Volkh",
+          "JAK Scimitar Kit",
+          "JAK Thumper-656",
+          "JAK Requiem",
+          "JAK Decimator",
+          "JAK Intimidator",
+          "JAK Widemouth Barrel",
+          "JAK Cataclysm",
+          "JAK Protean",
+          "JAK Deathmarch",
+          "JAK Devastators",
+          "JAK Salvo",
+          "JAK Lance",
+          "JAK Voltstorm",
+          "Low Grain Rounds",
+          "High Grain Rounds",
+          "Round Nose",
+          "Mono",
+          "Frangible",
+          "Hollowpoint",
+          "Armor Piercing",
+          "Overpressured +P",
+          "High Velocity",
+          "Incendiary Ammo",
+          "12 Gauge Explosive",
+          "12 Gauge Slug",
+          "12 Gauge Dragon's Breath",
+          "40mm Slug",
+          "40mm Sticky",
+          "40mm Drill Charge",
+          "Brightblaze 20\" Bolts",
+          "Blastcap 20\" Bolts",
+          "FTAC Caustic 20\" Bolts",
+          "Ripper Arrows",
+          "Blastcap Arrow",
+          "Blaze Arrow",
+          "Caustic Arrow",
+          "Snapshot Arrow"
+        ]
+      },
+      {
+        "subCategory": "Tacticals",
+        "data": [
+          "Stun Grenade",
+          "Battle Rage",
+          "Smoke Grenade",
+          "Scatter Mine",
+          "Decoy Grenade",
+          "Flash Grenade",
+          "Snapshot Grenade",
+          "Shock Stick",
+          "Stim",
+          "Tear Gas",
+          "EMD Grenade",
+          "EMD Mine",
+          "EMP Grenade",
+          "Bottle",
+          "Experimental Gas",
+          "Cymbal Monkey",
+          "LT53 Kazimir",
+          "Inhibitor",
+          "R4D Detector"
+        ]
+      },
+      {
+        "subCategory": "Equipment/Items",
+        "data": [
+          "Ascender",
+          "Parachute",
+          "Night Vision Goggles"
+        ]
+      },
+      {
+        "subCategory": "Unobtainable weapons",
+        "data": [
+          "1911",
+          "Katana",
+          "Combat Axe"
+        ]
+      },
+      {
+        "subCategory": "Miscellaneous",
+        "data": [
+          "Armor Plates",
+          "Breaching Charge",
+          "Browning M2",
+          "DShK",
+          "Flammable Canister",
+          "Flare",
+          "Halligan Bar",
+          "Line Launcher",
+          "Snowball",
+          "Spotter Scope",
+          "Zipline",
+          "Temp V",
+          "Shield Turret",
+          "Loadout Drop",
+          "Rock",
+          "Mutant Juggernaut"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Vehicles in Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Helicopters",
+        "data": [
+          "Light Helo",
+          "Heavy Chopper",
+          "Mi-8",
+          "AH-64 Apache",
+          "Mi-24 Hind",
+          "UH-60 Blackhawk",
+          "Recon Drone",
+          "Smoke Airdrop",
+          "Bomb Drone",
+          "RQ-16 T-Hawk"
+        ]
+      },
+      {
+        "subCategory": "Boats",
+        "data": [
+          "RHIB",
+          "Armored Patrol Boat",
+          "PWC"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Gametypes and Playlists in Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Multiplayer",
+        "data": [
+          "Team Deathmatch",
+          "Free-for-All",
+          "Domination",
+          "Search and Destroy",
+          "Kill Confirmed",
+          "Hardpoint",
+          "Control",
+          "Cutthroat",
+          "Ground War",
+          "Invasion",
+          "War Mode",
+          "Gun Game",
+          "Gunfight",
+          "Training Course",
+          "Snowfight",
+          "Infected",
+          "Vortex",
+          "Ranked Play",
+          "All or Nothing",
+          "Supe'd Up",
+          "Headquarters",
+          "Hordepoint",
+          "Team Gun Game",
+          "Snipers Only",
+          "Bounty",
+          "Juggermosh",
+          "Capture the Flag",
+          "G3T_H1GH",
+          "One in the Chamber",
+          "Minefield",
+          "Escort",
+          "Arcade",
+          "Demolition",
+          "Hyper Cranked",
+          "Cache",
+          "Mutation",
+          "Bit Party",
+          "Headshots Only",
+          "Havoc",
+          "COD Warrior",
+          "Slam Deathmatch",
+          "Fishfection",
+          "Cyber Attack",
+          "Paintball",
+          "Defuse or Destroy",
+          "Hardcore",
+          "Highrise 24/7",
+          "Rust 24/7",
+          "Terminal 24/7",
+          "10v10 Mosh Pit",
+          "Experimental Playlist",
+          "Modern Warfare II Moshpit",
+          "Rustment 24/7",
+          "Meat 24/7",
+          "Greece 24/7",
+          "Mosh Pit",
+          "Shipmas 24/7",
+          "Hangover 24/7",
+          "Rio 24/7",
+          "Shipment 24/7",
+          "Stash House 24/7",
+          "Small Map Mosh Pit",
+          "Departures 24/7",
+          "Best of '09",
+          "1v1 Duel",
+          "Das Haus 24/7",
+          "Layover 24/7",
+          "Ship Haus 24/7",
+          "6 Star 24/7",
+          "Emergency 24/7",
+          "Growhouse 24/7",
+          "Season Three Moshpit",
+          "Vortex Moshpit",
+          "Grime 24/7",
+          "Paris 24/7",
+          "Tokyo 24/7",
+          "Season Four Moshpit",
+          "Streakless 24/7",
+          "Incline 24/7",
+          "G3T_H1GH3R Mosh Pit",
+          "Bait 24/7",
+          "Yard 24/7",
+          "Season Five Moshpit",
+          "Bows Before Throws",
+          "Party Mode",
+          "Drive Thru 24/7",
+          "Ghost Ship 24/7",
+          "All The Shipments! 24/7"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "List of Maps in Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Included",
+        "data": [
+          "Afghan",
+          "Derail",
+          "Estate",
+          "Favela",
+          "Highrise",
+          "Invasion",
+          "Karachi",
+          "Quarry",
+          "Rundown",
+          "Rust",
+          "Scrapyard",
+          "Skidrow",
+          "Sub Base",
+          "Terminal",
+          "Underpass",
+          "Wasteland",
+          "Levin Resort",
+          "Orlov Military Base",
+          "Popov Power",
+          "Operation Spearhead",
+          "Operation Deadbolt"
+        ]
+      },
+      {
+        "subCategory": "Season One",
+        "data": [
+          "Greece",
+          "Meat",
+          "Shipmas",
+          "Hangover",
+          "Rio",
+          "Breenbergh Hotel",
+          "Training Facility",
+          "Rust",
+          "Alley",
+          "Blacksite",
+          "Exhibit",
+          "Shipment",
+          "Shipmas",
+          "Tetanus",
+          "Satan's Quarry",
+          "Sporeyard"
+        ]
+      },
+      {
+        "subCategory": "Season Three",
+        "data": [
+          "6 Star",
+          "Emergency",
+          "Growhouse",
+          "Tanked",
+          "Checkpoint",
+          "Grime",
+          "Get High"
+        ]
+      },
+      {
+        "subCategory": "Season Five",
+        "data": [
+          "Bait",
+          "Yard",
+          "Celship",
+          "Toonoxide",
+          "Ink House"
+        ]
+      },
+      {
+        "subCategory": "Additional Feature",
+        "data": [
+          "Firing Range"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Perks and Streaks of Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Vests",
+        "data": [
+          "Infantry Vest",
+          "Engineer Vest",
+          "Gunner Vest",
+          "Demolition Vest",
+          "CCT Comms Vest",
+          "Overkill Vest",
+          "Assassin Vest",
+          "Ninja Vest",
+          "Gunslinger Vest",
+          "Modular Assault Rig",
+          "Compression Carrier",
+          "Mission Control Vest"
+        ]
+      },
+      {
+        "subCategory": "Boots",
+        "data": [
+          "Lightweight Boots",
+          "All-Terrain Boots",
+          "Running Sneakers",
+          "Tactical Pads",
+          "Stalker Boots",
+          "Covert Sneakers",
+          "Reinforced Boots",
+          "Climbing Boots"
+        ]
+      },
+      {
+        "subCategory": "KillstreaksandScorestreaks",
+        "data": [
+          "UAV",
+          "Mosquito Drone",
+          "SAM Turret",
+          "Bomb Drone",
+          "Care Package",
+          "Guardian-SC",
+          "Counter-UAV",
+          "Precision Airstrike",
+          "Cruise Missile",
+          "Cluster Mine",
+          "SAE",
+          "Mortar Strike",
+          "I.M.S.",
+          "Remote Turret",
+          "Juggernaut Recon",
+          "Carpet Bomb",
+          "Loitering Munition",
+          "Overwatch Helo",
+          "Emergency Airdrop",
+          "Wheelson-HS",
+          "VTOL Jet",
+          "Missile Drone",
+          "Advanced UAV",
+          "EMP",
+          "Gunship",
+          "Chopper Gunner",
+          "Juggernaut",
+          "Swarm",
+          "DNA Bomb",
+          "MGB"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Soundtrack of Call of Duty: Modern Warfare III",
+    "data": [
+      {
+        "subCategory": "Official Soundtrack",
+        "data": [
+          "Modern Warfare III",
+          "Operation 627",
+          "Makarov",
+          "Precious Cargo",
+          "We Are All Dangerous",
+          "Reactor",
+          "Payload",
+          "For The Greater Good",
+          "Crossroads",
+          "Passenger",
+          "Crash Site",
+          "Flashpoint",
+          "Oligarch",
+          "Highrise",
+          "Frozen Tundra",
+          "Gora Dam",
+          "Together As One",
+          "Danger Close",
+          "Trojan Horse",
+          "Czar 9-0 Actual",
+          "Game Changer",
+          "Six In The Blind",
+          "Who Dares Wins",
+          "The Best of Us"
+        ]
+      },
+      {
+        "subCategory": "Season Four",
+        "data": [
+          "Spetsnaz",
+          "Militia",
+          "Rangers",
+          "OpFor",
+          "TF141",
+          "Navy Seals"
+        ]
+      },
+      {
+        "subCategory": "Season Six",
+        "data": [
+          "Retaliation",
+          "Barbaric",
+          "End Of Days",
+          "Purgatory I",
+          "Blood Thirst",
+          "Chainsaw",
+          "Purgatory II",
+          "Horror Zone",
+          "Atrophy",
+          "Purgatory III",
+          "Blood Loss",
+          "The Haunting",
+          "Barbaric - Bill Kiley Remix",
+          "Retaliation - Bill Kiley Remix",
+          "Blood Loss - Bill Kiley Remix",
+          "Atrophy - Bill Kiley Remix",
+          "Chainsaw - Bill Kiley Remix"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Call of Duty Series",
+    "data": [
+      {
+        "subCategory": "Main Games",
+        "data": [
+          "Call of Duty",
+          "2",
+          "3",
+          "4: Modern Warfare",
+          "World at War",
+          "Modern Warfare 2",
+          "Black Ops",
+          "Modern Warfare 3",
+          "Black Ops II",
+          "Ghosts",
+          "Advanced Warfare",
+          "Black Ops III",
+          "Infinite Warfare",
+          "WWII",
+          "Black Ops 4",
+          "Modern Warfare",
+          "Black Ops Cold War",
+          "Vanguard",
+          "Modern Warfare II",
+          "Black Ops 6",
+          "Black Ops 7"
+        ]
+      },
+      {
+        "subCategory": "Expanded Universe",
+        "data": [
+          "Modern Warfare 2: Ghost",
+          "GKNOVA6",
+          "Find Makarov: Operation Kingfish",
+          "Soap's Journal",
+          "Rightful King",
+          "Devil's Breath",
+          "CourtOptic2055.com",
+          "V.E.R.S.I.O.N.",
+          "Black Ops III comic",
+          "Call of Duty: Zombies Vol. 1",
+          "Call of Duty: Zombies Vol. 2",
+          "Black Ops 4 comic",
+          "Pawn Takes Pawn",
+          "Vanguard comic",
+          "The Truth Lies",
+          "Call of Duty film"
+        ]
+      },
+      {
+        "subCategory": "Nintendo DS Games",
+        "data": [
+          "Call of Duty 4: Modern Warfare",
+          "World at War",
+          "Modern Warfare: Mobilized",
+          "Black Ops",
+          "Modern Warfare 3: Defiance"
+        ]
+      },
+      {
+        "subCategory": "Other media",
+        "data": [
+          "There's A Soldier In All Of Us",
+          "Find Makarov",
+          "Zombie Labs",
+          "The Vet & The n00b",
+          "Surprise",
+          "The Replacer",
+          "Epic Night Out",
+          "CODnapped",
+          "Aim Down Sights",
+          "Discover Your Power",
+          "Randall Higgins: KillCameraman",
+          "Shadows of Evil The Ride",
+          "Seize Glory",
+          "Screw It, Let's Go To Space",
+          "Reassemble!",
+          "Ultimate Team",
+          "The Lobby"
+        ]
+      },
+      {
+        "subCategory": "Canceled Games",
+        "data": [
+          "Combined Forces",
+          "Devil's Brigade",
+          "Tactics",
+          "Real-Time Card Game",
+          "Vietnam",
+          "Roman Wars",
+          "Advanced Warfare Sequel",
+          "Future Warfare",
+          "Project Zed"
+        ]
+      }
+    ]
+  }
+]
