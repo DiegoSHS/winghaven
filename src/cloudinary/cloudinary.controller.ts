@@ -1,25 +1,15 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/common';
 import { CloudinaryService } from './cloudinary.service';
 import { UpdateCloudinaryDto } from './dto/update-cloudinary.dto';
-
-export async function ExtractBuffer(data) {
-  try {
-    console.log('Received file:', data)
-    const bytes = await data.toBuffer()
-    return Buffer.from(bytes)
-  } catch (error) {
-    return error
-  }
-}
+import { MultipartFile } from '@fastify/multipart';
 
 @Controller('cloudinary')
 export class CloudinaryController {
   constructor(private readonly cloudinaryService: CloudinaryService) { }
-
   @Post()
-  create(@Req() req) {
-    console.log(req.body);
-    return {};
+  async create(@Req() req: { file: () => Promise<MultipartFile> }) {
+    const file = await req.file();
+    return this.cloudinaryService.create(file)
   }
   @Get()
   findAll() {

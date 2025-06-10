@@ -1,1 +1,1 @@
-export class CreateCloudinaryDto {}
+export class CreateCloudinaryDto { }
