@@ -15,20 +15,17 @@ datasource db {
 }
 
 model Weapon {
-  id               Int             @id @default(autoincrement())
+  id               Int                @id @default(autoincrement())
   name             String
-  type             String
-  createdAt        DateTime        @default(now())
-  updatedAt        DateTime        @updatedAt
-  WeaponCategory   WeaponCategory? @relation(fields: [weaponCategoryId], references: [id])
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  WeaponCategory   WeaponCategory?    @relation(fields: [weaponCategoryId], references: [id])
   weaponCategoryId Int?
-  Attachment       Attachment?     @relation(fields: [attachmentId], references: [id])
   attachmentId     Int?
-  Loadout          Loadout?        @relation(fields: [loadoutId], references: [id])
-  loadoutId        Int?
+  loadout          Loadout[]
+  WeaponAttachment WeaponAttachment[]
 
   @@index([name])
-  @@index([type])
 }
 
 model WeaponCategory {
@@ -46,13 +43,25 @@ model Attachment {
   name                 String
   createdAt            DateTime            @default(now())
   updatedAt            DateTime            @updatedAt
-  weapon               Weapon[]
   AttachmentCategory   AttachmentCategory? @relation(fields: [attachmentCategoryId], references: [id])
   attachmentCategoryId Int?
-  Loadout              Loadout?            @relation(fields: [loadoutId], references: [id])
-  loadoutId            Int?
+
+  WeaponAttachment  WeaponAttachment[]
+  LoadoutAttachment LoadoutAttachment[]
 
   @@index([name])
+}
+
+model WeaponAttachment {
+  weaponId     Int
+  attachmentId Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  Weapon     Weapon     @relation(fields: [weaponId], references: [id])
+  Attachment Attachment @relation(fields: [attachmentId], references: [id])
+
+  @@id([weaponId, attachmentId])
 }
 
 model AttachmentCategory {
@@ -66,14 +75,27 @@ model AttachmentCategory {
 }
 
 model Loadout {
-  id         Int          @id @default(autoincrement())
-  name       String
-  meta       Boolean      @default(false)
-  viable     Boolean      @default(false)
-  createdAt  DateTime     @default(now())
-  updatedAt  DateTime     @updatedAt
-  weapon     Weapon[]
-  attachment Attachment[]
+  id                Int                 @id @default(autoincrement())
+  name              String
+  meta              Boolean             @default(false)
+  viable            Boolean             @default(false)
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  Weapon            Weapon?             @relation(fields: [weaponId], references: [id])
+  weaponId          Int?
+  LoadoutAttachment LoadoutAttachment[]
 
   @@index([name])
+}
+
+model LoadoutAttachment {
+  loadoutId    Int
+  attachmentId Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  Loadout    Loadout    @relation(fields: [loadoutId], references: [id])
+  Attachment Attachment @relation(fields: [attachmentId], references: [id])
+
+  @@id([loadoutId, attachmentId])
 }

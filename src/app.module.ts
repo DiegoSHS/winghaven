@@ -5,10 +5,13 @@ import { WeaponModule } from './weapon/weapon.module';
 import { ScrapperModule } from './scrapper/scrapper.module';
 import { CloudinaryModule } from './cloudinary/cloudinary.module';
 import { ConfigModule } from '@nestjs/config';
+import { PrismaService } from './prisma.service';
+import { AttachmentModule } from './attachment/attachment.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule],
+  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, PrismaService],
+  exports: [PrismaService]
 })
 export class AppModule { }

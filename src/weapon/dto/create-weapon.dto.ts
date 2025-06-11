@@ -1,1 +1,3 @@
-export class CreateWeaponDto {}
+export class CreateWeaponDto {
+    name: string
+}
