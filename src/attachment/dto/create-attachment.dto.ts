@@ -1,1 +1,3 @@
-export class CreateAttachmentDto {}
+export class CreateAttachmentDto {
+    name: string;
+}

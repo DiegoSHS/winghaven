@@ -5,10 +5,13 @@ import { UpdateAttachmentDto } from './dto/update-attachment.dto';
 
 @Controller('attachment')
 export class AttachmentController {
-  constructor(private readonly attachmentService: AttachmentService) {}
+  constructor(private readonly attachmentService: AttachmentService) { }
 
   @Post()
-  create(@Body() createAttachmentDto: CreateAttachmentDto) {
+  create(@Body() createAttachmentDto: CreateAttachmentDto | CreateAttachmentDto[]) {
+    if (Array.isArray(createAttachmentDto)) {
+      return this.attachmentService.bulkCreate(createAttachmentDto);
+    }
     return this.attachmentService.create(createAttachmentDto);
   }
 

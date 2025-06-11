@@ -14,7 +14,12 @@ export class WeaponService {
     })
     return result;
   }
-
+  async bulkCreate(weapons: CreateWeaponDto[]) {
+    const result = await this.prisma.weapon.createMany({
+      data: weapons,
+    });
+    return result;
+  }
   async findAll() {
     const result = await this.prisma.weapon.findMany();
     return result;

@@ -5,10 +5,13 @@ import { UpdateWeaponDto } from './dto/update-weapon.dto';
 
 @Controller('weapon')
 export class WeaponController {
-  constructor(private readonly weaponService: WeaponService) {}
+  constructor(private readonly weaponService: WeaponService) { }
 
   @Post()
-  create(@Body() createWeaponDto: CreateWeaponDto) {
+  create(@Body() createWeaponDto: CreateWeaponDto | CreateWeaponDto[]) {
+    if (Array.isArray(createWeaponDto)) {
+      return this.weaponService.bulkCreate(createWeaponDto);
+    }
     return this.weaponService.create(createWeaponDto);
   }
 
