@@ -13,3 +13,67 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Weapon {
+  id               Int             @id @default(autoincrement())
+  name             String
+  type             String
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  WeaponCategory   WeaponCategory? @relation(fields: [weaponCategoryId], references: [id])
+  weaponCategoryId Int?
+  Attachment       Attachment?     @relation(fields: [attachmentId], references: [id])
+  attachmentId     Int?
+  Loadout          Loadout?        @relation(fields: [loadoutId], references: [id])
+  loadoutId        Int?
+
+  @@index([name])
+  @@index([type])
+}
+
+model WeaponCategory {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  weapon    Weapon[]
+
+  @@index([name])
+}
+
+model Attachment {
+  id                   Int                 @id @default(autoincrement())
+  name                 String
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+  weapon               Weapon[]
+  AttachmentCategory   AttachmentCategory? @relation(fields: [attachmentCategoryId], references: [id])
+  attachmentCategoryId Int?
+  Loadout              Loadout?            @relation(fields: [loadoutId], references: [id])
+  loadoutId            Int?
+
+  @@index([name])
+}
+
+model AttachmentCategory {
+  id         Int          @id @default(autoincrement())
+  name       String
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  attachment Attachment[]
+
+  @@index([name])
+}
+
+model Loadout {
+  id         Int          @id @default(autoincrement())
+  name       String
+  meta       Boolean      @default(false)
+  viable     Boolean      @default(false)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  weapon     Weapon[]
+  attachment Attachment[]
+
+  @@index([name])
+}

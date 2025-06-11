@@ -1,6 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Req, Put } from '@nestjs/common';
+import { Controller, Get, Post, Param, Delete, Req, Put } from '@nestjs/common';
 import { CloudinaryService } from './cloudinary.service';
-import { UpdateCloudinaryDto } from './dto/update-cloudinary.dto';
 import { MultipartFile } from '@fastify/multipart';
 
 @Controller('cloudinary')
