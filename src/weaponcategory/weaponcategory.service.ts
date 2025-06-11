@@ -1,26 +1,52 @@
 import { Injectable } from '@nestjs/common';
 import { CreateWeaponcategoryDto } from './dto/create-weaponcategory.dto';
 import { UpdateWeaponcategoryDto } from './dto/update-weaponcategory.dto';
+import { PrismaService } from 'src/prisma.service';
 
 @Injectable()
 export class WeaponcategoryService {
-  create(createWeaponcategoryDto: CreateWeaponcategoryDto) {
-    return 'This action adds a new weaponcategory';
+  constructor(
+    private readonly prisma: PrismaService
+  ) { }
+
+  async create(createWeaponcategoryDto: CreateWeaponcategoryDto) {
+    const result = await this.prisma.weaponcategory.create({
+      data: createWeaponcategoryDto,
+    });
+    return result;
   }
 
-  findAll() {
-    return `This action returns all weaponcategory`;
+  async bulkCreate(weaponcategories: CreateWeaponcategoryDto[]) {
+    const result = await this.prisma.weaponcategory.createMany({
+      data: weaponcategories,
+    });
+    return result;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} weaponcategory`;
+  async findAll() {
+    const result = await this.prisma.weaponcategory.findMany();
+    return result;
   }
 
-  update(id: number, updateWeaponcategoryDto: UpdateWeaponcategoryDto) {
-    return `This action updates a #${id} weaponcategory`;
+  async findOne(id: number) {
+    const result = await this.prisma.weaponcategory.findUnique({
+      where: { id },
+    });
+    return result;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} weaponcategory`;
+  async update(id: number, updateWeaponcategoryDto: UpdateWeaponcategoryDto) {
+    const result = await this.prisma.weaponcategory.update({
+      where: { id },
+      data: updateWeaponcategoryDto,
+    });
+    return result;
+  }
+
+  async remove(id: number) {
+    const result = await this.prisma.weaponcategory.delete({
+      where: { id },
+    });
+    return result;
   }
 }
