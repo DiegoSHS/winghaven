@@ -8,9 +8,12 @@ export class AttachmentcategoryController {
   constructor(private readonly attachmentcategoryService: AttachmentcategoryService) {}
 
   @Post()
-  create(@Body() createAttachmentcategoryDto: CreateAttachmentcategoryDto) {
-    return this.attachmentcategoryService.create(createAttachmentcategoryDto);
+create(@Body() createAttachmentcategoryDto: CreateAttachmentcategoryDto | CreateAttachmentcategoryDto[]) {
+  if (Array.isArray(createAttachmentcategoryDto)) {
+    return this.attachmentcategoryService.bulkCreate(createAttachmentcategoryDto);
   }
+  return this.attachmentcategoryService.create(createAttachmentcategoryDto);
+}
 
   @Get()
   findAll() {
