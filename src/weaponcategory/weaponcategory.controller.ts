@@ -8,10 +8,12 @@ export class WeaponcategoryController {
   constructor(private readonly weaponcategoryService: WeaponcategoryService) {}
 
   @Post()
-  create(@Body() createWeaponcategoryDto: CreateWeaponcategoryDto) {
-    return this.weaponcategoryService.create(createWeaponcategoryDto);
+create(@Body() createWeaponcategoryDto: CreateWeaponcategoryDto | CreateWeaponcategoryDto[]) {
+  if (Array.isArray(createWeaponcategoryDto)) {
+    return this.weaponcategoryService.bulkCreate(createWeaponcategoryDto);
   }
-
+  return this.weaponcategoryService.create(createWeaponcategoryDto);
+}
   @Get()
   findAll() {
     return this.weaponcategoryService.findAll();
