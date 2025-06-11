@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe } from '@nestjs/common';
 import { WeaponService } from './weapon.service';
 import { CreateWeaponDto } from './dto/create-weapon.dto';
 import { UpdateWeaponDto } from './dto/update-weapon.dto';
@@ -16,22 +16,22 @@ export class WeaponController {
   }
 
   @Get()
-  findAll() {
+  findAll(
+    @Param('id', ParseIntPipe) id?: number,
+  ) {
+    if (id) {
+      return this.weaponService.findOne(id);
+    }
     return this.weaponService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.weaponService.findOne(+id);
-  }
-
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateWeaponDto: UpdateWeaponDto) {
-    return this.weaponService.update(+id, updateWeaponDto);
+  update(@Param('id', ParseIntPipe) id: number, @Body() updateWeaponDto: UpdateWeaponDto) {
+    return this.weaponService.update(id, updateWeaponDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.weaponService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.weaponService.remove(id);
   }
 }

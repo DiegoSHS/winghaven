@@ -32,7 +32,18 @@ export class WeaponAttachmentService {
     });
     return result;
   }
-
+  async findByWeaponId(weaponId: number) {
+    const result = await this.prisma.weaponAttachment.findMany({
+      where: { weaponId },
+    });
+    return result;
+  }
+  async findByAttachmentId(attachmentId: number) {
+    const result = await this.prisma.weaponAttachment.findMany({
+      where: { attachmentId },
+    });
+    return result;
+  }
   async update(weaponId: number, attachmentId: number, updateWeaponAttachmentDto: UpdateWeaponAttachmentDto) {
     const result = await this.prisma.weaponAttachment.update({
       where: { weaponId_attachmentId: { weaponId, attachmentId } },

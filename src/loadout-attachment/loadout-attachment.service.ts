@@ -36,6 +36,20 @@ export class LoadoutAttachmentService {
     return result;
   }
 
+  async findByLoadoutId(loadoutId: number) {
+    const result = await this.prisma.loadoutAttachment.findMany({
+      where: { loadoutId },
+    });
+    return result;
+  }
+
+  async findByAttachmentId(attachmentId: number) {
+    const result = await this.prisma.loadoutAttachment.findMany({
+      where: { attachmentId },
+    });
+    return result;
+  }
+
   async update(
     loadoutId: number,
     attachmentId: number,

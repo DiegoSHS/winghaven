@@ -1,11 +1,11 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe } from '@nestjs/common';
 import { LoadoutAttachmentService } from './loadout-attachment.service';
 import { CreateLoadoutAttachmentDto } from './dto/create-loadout-attachment.dto';
 import { UpdateLoadoutAttachmentDto } from './dto/update-loadout-attachment.dto';
 
 @Controller('loadout-attachment')
 export class LoadoutAttachmentController {
-  constructor(private readonly loadoutAttachmentService: LoadoutAttachmentService) {}
+  constructor(private readonly loadoutAttachmentService: LoadoutAttachmentService) { }
 
   @Post()
   create(@Body() createLoadoutAttachmentDto: CreateLoadoutAttachmentDto) {
@@ -13,22 +13,36 @@ export class LoadoutAttachmentController {
   }
 
   @Get()
-  findAll() {
+  findAll(
+    @Query('loadoutId', ParseIntPipe) loadoutId?: number,
+    @Query('attachmentId', ParseIntPipe) attachmentId?: number
+  ) {
+    if (loadoutId && attachmentId) {
+      return this.loadoutAttachmentService.findOne(loadoutId, attachmentId);
+    }
+    if (loadoutId) {
+      return this.loadoutAttachmentService.findByLoadoutId(loadoutId);
+    }
+    if (attachmentId) {
+      return this.loadoutAttachmentService.findByAttachmentId(attachmentId);
+    }
     return this.loadoutAttachmentService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.loadoutAttachmentService.findOne(+id);
+  @Patch()
+  update(
+    @Body() updateLoadoutAttachmentDto: UpdateLoadoutAttachmentDto,
+    @Query('loadoutId', ParseIntPipe) loadoutId?: number,
+    @Query('attachmentId', ParseIntPipe) attachmentId?: number,
+  ) {
+    return this.loadoutAttachmentService.update(loadoutId, attachmentId, updateLoadoutAttachmentDto);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateLoadoutAttachmentDto: UpdateLoadoutAttachmentDto) {
-    return this.loadoutAttachmentService.update(+id, updateLoadoutAttachmentDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.loadoutAttachmentService.remove(+id);
+  @Delete()
+  remove(
+    @Query('loadoutId', ParseIntPipe) loadoutId?: number,
+    @Query('attachmentId', ParseIntPipe) attachmentId?: number,
+  ) {
+    return this.loadoutAttachmentService.remove(loadoutId, attachmentId);
   }
 }

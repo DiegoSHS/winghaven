@@ -1,25 +1,28 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe } from '@nestjs/common';
 import { WeaponCategoryService } from './weapon-category.service';
 import { CreateWeaponCategoryDto } from './dto/create-weapon-category.dto';
 import { UpdateWeaponCategoryDto } from './dto/update-weapon-category.dto';
 
 @Controller('weapon-category')
 export class WeaponCategoryController {
-  constructor(private readonly weaponCategoryService: WeaponCategoryService) {}
+  constructor(private readonly weaponCategoryService: WeaponCategoryService) { }
 
   @Post()
-  create(@Body() createWeaponCategoryDto: CreateWeaponCategoryDto) {
+  create(@Body() createWeaponCategoryDto: CreateWeaponCategoryDto | CreateWeaponCategoryDto[]) {
+    if (Array.isArray(createWeaponCategoryDto)) {
+      return this.weaponCategoryService.bulkCreate(createWeaponCategoryDto);
+    }
     return this.weaponCategoryService.create(createWeaponCategoryDto);
   }
 
   @Get()
-  findAll() {
+  findAll(
+    @Query('id', ParseIntPipe) id?: number,
+  ) {
+    if (id) {
+      return this.weaponCategoryService.findOne(id);
+    }
     return this.weaponCategoryService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.weaponCategoryService.findOne(+id);
   }
 
   @Patch(':id')

@@ -12,11 +12,11 @@ import { LoadoutAttachmentModule } from './loadout-attachment/loadout-attachment
 import { AttachmentCategoryModule } from './attachment-category/attachment-category.module';
 import { WeaponAttachmentModule } from './weapon-attachment/weapon-attachment.module';
 import { WeaponCategoryModule } from './weapon-category/weapon-category.module';
+import { PrismaModule } from './prisma.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule, LoadoutModule, LoadoutAttachmentModule, AttachmentCategoryModule, WeaponAttachmentModule, WeaponCategoryModule],
+  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule, LoadoutModule, LoadoutAttachmentModule, AttachmentCategoryModule, WeaponAttachmentModule, WeaponCategoryModule, PrismaModule],
   controllers: [AppController],
-  providers: [AppService, PrismaService],
-  exports: [PrismaService]
+  providers: [AppService],
 })
 export class AppModule { }
