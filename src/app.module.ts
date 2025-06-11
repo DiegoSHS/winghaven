@@ -7,14 +7,14 @@ import { CloudinaryModule } from './cloudinary/cloudinary.module';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaService } from './prisma.service';
 import { AttachmentModule } from './attachment/attachment.module';
-import { WeaponcategoryModule } from './weaponcategory/weaponcategory.module';
-import { WeaponattachmentModule } from './weaponattachment/weaponattachment.module';
-import { AttachmentcategoryModule } from './attachmentcategory/attachmentcategory.module';
 import { LoadoutModule } from './loadout/loadout.module';
-import { LoadoutattachmentModule } from './loadoutattachment/loadoutattachment.module';
+import { LoadoutAttachmentModule } from './loadout-attachment/loadout-attachment.module';
+import { AttachmentCategoryModule } from './attachment-category/attachment-category.module';
+import { WeaponAttachmentModule } from './weapon-attachment/weapon-attachment.module';
+import { WeaponCategoryModule } from './weapon-category/weapon-category.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule, WeaponcategoryModule, WeaponattachmentModule, AttachmentcategoryModule, LoadoutModule, LoadoutattachmentModule],
+  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule, LoadoutModule, LoadoutAttachmentModule, AttachmentCategoryModule, WeaponAttachmentModule, WeaponCategoryModule],
   controllers: [AppController],
   providers: [AppService, PrismaService],
   exports: [PrismaService]
