@@ -32,7 +32,9 @@
     "puppeteer": "^24.10.0",
     "puppeteer-core": "^24.10.0",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "scribe.js-ocr": "^0.8.0",
+    "tesseract.js": "^6.0.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",

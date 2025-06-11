@@ -112,7 +112,7 @@ export class CloudinaryService {
     }
     const uploadResult = await this.uploadImage(buffer)
     return {
-      error: null,
+      error: null as string,
       data: uploadResult,
       message: 'Image uploaded successfully',
     }
