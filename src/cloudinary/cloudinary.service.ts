@@ -1,28 +1,35 @@
 import { Injectable } from '@nestjs/common';
-import { UpdateCloudinaryDto } from './dto/update-cloudinary.dto';
-import { AdminAndResourceOptions, ResourceApiResponse, ResponseCallback, UploadApiErrorResponse, UploadApiOptions, UploadApiResponse, UploadResponseCallback, v2 } from 'cloudinary';
+import { AdminAndResourceOptions, DeleteApiResponse, ResourceApiResponse, ResponseCallback, UploadApiErrorResponse, UploadApiOptions, UploadApiResponse, UploadResponseCallback, v2 } from 'cloudinary';
 import { MultipartFile } from '@fastify/multipart';
 
 @Injectable()
 export class CloudinaryService {
   private uploadOptions: UploadApiOptions = {
     folder: 'wing',
+    resource_type: 'image',
+  }
+  private adminOptions: AdminAndResourceOptions = {
+    type: 'upload',
+    prefix: 'wing/',
+    resource_type: 'image',
+    max_results: 30,
+    fields: ['public_id', 'secure_url'],
   }
   private async extractBuffer(data: MultipartFile) {
     try {
       console.log('Extracting buffer from:', data.filename)
-      const bytes = await data.toBuffer()
-      if (!bytes || bytes.length === 0) {
+      const buffer = await data.toBuffer()
+      if (!buffer || buffer.length === 0) {
         throw new Error('File is empty or not readable')
       }
       return {
         error: null,
-        data: bytes,
+        buffer,
       }
     } catch (error) {
       return {
-        error: error.message || 'Unknown error occurred',
-        data: Buffer.from([]),
+        error: error.message as string,
+        buffer: Buffer.from([]),
       }
     }
   }
@@ -45,27 +52,65 @@ export class CloudinaryService {
       resolve: (result: ResourceApiResponse) => void,
       reject
     ) => {
-      const options: AdminAndResourceOptions = {
-        type: 'upload',
-        prefix: 'wing/',
-        max_results: 30,
-      }
       const callback: ResponseCallback = (err, result: ResourceApiResponse) => {
         if (err) reject(err)
         resolve(result)
       }
       v2.api
-        .resources(options, callback)
+        .resources(this.adminOptions, callback)
+    })
+  }
+  private getResource(public_id: string) {
+    return new Promise((
+      resolve: (result: ResourceApiResponse) => void,
+      reject
+    ) => {
+      const callback: ResponseCallback = (err, result: ResourceApiResponse) => {
+        if (err) reject(err)
+        resolve(result)
+      }
+      v2.api.resource(public_id, this.adminOptions, callback)
+    })
+  }
+  public updateImage(public_id: string, buffer: Buffer) {
+    return new Promise((
+      resolve: (result: UploadApiResponse) => void,
+      reject
+    ) => {
+      const callback: ResponseCallback = (err, result: UploadApiResponse) => {
+        if (err) reject(err)
+        resolve(result)
+      }
+      v2.uploader
+        .upload_stream({
+          public_id,
+          overwrite: true,
+          folder: 'wing',
+          resource_type: 'image'
+        }, callback)
+        .end(buffer)
+    })
+  }
+  public deleteImage(public_id: string) {
+    return new Promise((
+      resolve: (result: DeleteApiResponse) => void,
+      reject
+    ) => {
+      const callback: ResponseCallback = (err, result: DeleteApiResponse) => {
+        if (err) reject(err)
+        resolve(result)
+      }
+      v2.api.delete_resources([public_id], callback)
     })
   }
   async create(file: MultipartFile) {
-    const { error, data } = await this.extractBuffer(file)
+    const { error, buffer } = await this.extractBuffer(file)
     if (error) return {
       error,
       data: null,
-      message: null
+      message: 'Failed to extract file buffer',
     }
-    const uploadResult = await this.uploadImage(data)
+    const uploadResult = await this.uploadImage(buffer)
     return {
       error: null,
       data: uploadResult,
@@ -74,29 +119,44 @@ export class CloudinaryService {
   }
 
   async findAll() {
-    const result = await this.getResources()
-    const data = result.resources.map((resource) => {
-      return {
-        id: resource.public_id,
-        url: resource.secure_url
-      }
-    })
+    const data = await this.getResources()
     return {
       error: null,
-      data: data,
+      data,
       message: 'Resources fetched successfully',
     }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} cloudinary`;
+  findOne(public_id: string) {
+    const data = this.getResource(public_id)
+    return {
+      error: null,
+      data,
+      message: 'Resource fetched successfully',
+    }
   }
 
-  update(id: number, updateCloudinaryDto: UpdateCloudinaryDto) {
-    return `This action updates a #${id} cloudinary`;
+  async update(public_id: string, file: MultipartFile) {
+    const { error, buffer } = await this.extractBuffer(file)
+    if (error) return {
+      error,
+      data: null,
+      message: 'Failed to extract file buffer',
+    }
+    const updateResult = await this.updateImage(public_id, buffer)
+    return {
+      data: updateResult,
+      error: null,
+      message: 'Image updated successfully',
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} cloudinary`;
+  async remove(public_id: string) {
+    const data = await this.deleteImage(public_id)
+    return {
+      error: null,
+      data,
+      message: 'Image deleted successfully',
+    }
   }
 }

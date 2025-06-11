@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Req, Put } from '@nestjs/common';
 import { CloudinaryService } from './cloudinary.service';
 import { UpdateCloudinaryDto } from './dto/update-cloudinary.dto';
 import { MultipartFile } from '@fastify/multipart';
@@ -17,17 +17,19 @@ export class CloudinaryController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.cloudinaryService.findOne(+id);
+  findOne(@Param('id') public_id: string) {
+    return this.cloudinaryService.findOne(public_id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCloudinaryDto: UpdateCloudinaryDto) {
-    return this.cloudinaryService.update(+id, updateCloudinaryDto);
+  @Put(':id')
+  async update(@Req() req: { file: () => Promise<MultipartFile> }, @Param('id') public_id: string) {
+    const file = await req.file();
+
+    return this.cloudinaryService.update(public_id, file);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.cloudinaryService.remove(+id);
+  remove(@Param('id') public_id: string) {
+    return this.cloudinaryService.remove(public_id);
   }
 }
