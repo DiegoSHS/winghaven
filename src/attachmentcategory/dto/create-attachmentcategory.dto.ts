@@ -1,1 +1,3 @@
-export class CreateAttachmentcategoryDto {}
+export class CreateAttachmentcategoryDto {
+name: "string"
+}
