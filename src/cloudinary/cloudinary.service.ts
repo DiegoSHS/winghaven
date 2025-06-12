@@ -1,7 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { AdminAndResourceOptions, DeleteApiResponse, ResourceApiResponse, ResponseCallback, UploadApiErrorResponse, UploadApiOptions, UploadApiResponse, UploadResponseCallback, v2 } from 'cloudinary';
 import { MultipartFile } from '@fastify/multipart';
-import { ImageService } from '../image/image.service';
 import { extractBuffer } from 'src/utils';
 
 @Injectable()

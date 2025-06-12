@@ -1,9 +1,10 @@
 import { MultipartFile } from "@fastify/multipart";
 import { TesseractService } from "src/tesseract/tesseract.service";
 import { SharpService } from "src/sharp/sharp.service";
-import { InternalServerErrorException } from "@nestjs/common";
+import { Injectable, InternalServerErrorException } from "@nestjs/common";
 import { extractBuffer } from "src/utils";
 
+@Injectable()
 export class ImageService {
   constructor(
     private readonly tesseract: TesseractService,

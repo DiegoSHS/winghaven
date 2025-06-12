@@ -2,13 +2,12 @@ import { Module } from '@nestjs/common';
 import { CloudinaryService } from './cloudinary.service';
 import { CloudinaryController } from './cloudinary.controller';
 import { CloudinaryProvider } from './cloudinary.provider';
-import { SharpService } from 'src/sharp/sharp.service';
-import { TesseractService } from 'src/tesseract/tesseract.service';
-import { ImageService } from 'src/image/image.service';
+import { ImageModule } from 'src/image/image.module';
 
 @Module({
+  imports: [ImageModule],
   controllers: [CloudinaryController],
-  providers: [CloudinaryProvider, CloudinaryService, SharpService, TesseractService, ImageService],
-  exports: [CloudinaryProvider, CloudinaryService, SharpService, TesseractService],
+  providers: [CloudinaryProvider, CloudinaryService],
+  exports: [CloudinaryProvider, CloudinaryService,],
 })
 export class CloudinaryModule { }

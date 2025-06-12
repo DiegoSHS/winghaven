@@ -15,9 +15,13 @@ export class AttachmentService {
     return result;
   }
 
-  async bulkCreate(attachments: CreateAttachmentDto[]) {
+  async bulkCreate(attachments: CreateAttachmentDto[], gameId?: number) {
+    const attachmentsWithGameId = gameId ? attachments.map(attachment => ({
+      ...attachment,
+      gameId
+    })) : attachments;
     const result = await this.prisma.attachment.createMany({
-      data: attachments,
+      data: attachmentsWithGameId,
     });
     return result;
   }
@@ -30,6 +34,18 @@ export class AttachmentService {
   async findOne(id: number) {
     const attachment = await this.prisma.attachment.findUnique({
       where: { id },
+    });
+    return attachment;
+  }
+
+  async findByName(name: string) {
+    const attachment = await this.prisma.attachment.findMany({
+      where: {
+        name: {
+          contains: name,
+          mode: 'insensitive',
+        }
+      },
     });
     return attachment;
   }

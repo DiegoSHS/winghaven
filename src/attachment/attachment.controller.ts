@@ -9,9 +9,12 @@ export class AttachmentController {
   constructor(private readonly attachmentService: AttachmentService) { }
 
   @Post()
-  create(@Body() createAttachmentDto: CreateAttachmentDto | CreateAttachmentDto[]) {
+  create(
+    @Body('data') createAttachmentDto: CreateAttachmentDto | CreateAttachmentDto[],
+    @Body('gameId', customIdPipe) gameId?: number,
+  ) {
     if (Array.isArray(createAttachmentDto)) {
-      return this.attachmentService.bulkCreate(createAttachmentDto);
+      return this.attachmentService.bulkCreate(createAttachmentDto, gameId);
     }
     return this.attachmentService.create(createAttachmentDto);
   }
@@ -25,7 +28,10 @@ export class AttachmentController {
     }
     return this.attachmentService.findAll();
   }
-
+  @Get('/search')
+  search(@Query('name') name) {
+    return this.attachmentService.findByName(name);
+  }
   @Patch(':id')
   update(@Param('id', customIdPipe) id: number, @Body() updateAttachmentDto: UpdateAttachmentDto) {
     return this.attachmentService.update(id, updateAttachmentDto);
