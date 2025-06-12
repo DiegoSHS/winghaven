@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { WeaponAttachmentService } from './weapon-attachment.service';
 import { CreateWeaponAttachmentDto } from './dto/create-weapon-attachment.dto';
 import { UpdateWeaponAttachmentDto } from './dto/update-weapon-attachment.dto';
+import { customIdPipe } from 'src/common/validation';
 
 @Controller('weapon-attachment')
 export class WeaponAttachmentController {
@@ -17,8 +18,8 @@ export class WeaponAttachmentController {
 
   @Get()
   findAll(
-    @Query('weaponId', ParseIntPipe) weaponId?: number,
-    @Query('attachmentId', ParseIntPipe) attachmentId?: number
+    @Query('weaponId', customIdPipe) weaponId?: number,
+    @Query('attachmentId', customIdPipe) attachmentId?: number
   ) {
     if (weaponId && attachmentId) {
       return this.weaponAttachmentService.findOne(weaponId, attachmentId);
@@ -34,8 +35,8 @@ export class WeaponAttachmentController {
 
   @Patch()
   update(
-    @Query('weaponId', ParseIntPipe) weaponId: number,
-    @Query('attachmentId', ParseIntPipe) attachmentId,
+    @Query('weaponId', customIdPipe) weaponId: number,
+    @Query('attachmentId', customIdPipe) attachmentId,
     @Body() updateWeaponAttachmentDto: UpdateWeaponAttachmentDto
   ) {
     return this.weaponAttachmentService.update(weaponId, attachmentId, updateWeaponAttachmentDto);
@@ -43,8 +44,8 @@ export class WeaponAttachmentController {
 
   @Delete()
   remove(
-    @Query('weaponId', ParseIntPipe) weaponId: number,
-    @Query('attachmentId', ParseIntPipe) attachmentId
+    @Query('weaponId', customIdPipe) weaponId: number,
+    @Query('attachmentId', customIdPipe) attachmentId
   ) {
     return this.weaponAttachmentService.remove(weaponId, attachmentId);
   }

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { ScrapperService } from './scrapper.service';
 import { CreateScrapperDto } from './dto/create-scrapper.dto';
 import { UpdateScrapperDto } from './dto/update-scrapper.dto';
@@ -12,9 +12,9 @@ export class ScrapperController {
     return await this.scrapperService.create(createScrapperDto);
   }
 
-  @Get()
-  findAll() {
-    return this.scrapperService.findAll();
+  @Get('/clean')
+  findAll(@Query('filename') filename: string) {
+    return this.scrapperService.findAll(filename);
   }
 
   @Get(':id')

@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { LoadoutService } from './loadout.service';
 import { CreateLoadoutDto } from './dto/create-loadout.dto';
 import { UpdateLoadoutDto } from './dto/update-loadout.dto';
+import { customIdPipe } from 'src/common/validation';
 
 @Controller('loadout')
 export class LoadoutController {
@@ -14,7 +15,7 @@ export class LoadoutController {
 
   @Get()
   findAll(
-    @Param('id', ParseIntPipe) id?: number,
+    @Param('id', customIdPipe) id?: number,
   ) {
     if (id) {
       return this.loadoutService.findOne(id);
@@ -23,12 +24,12 @@ export class LoadoutController {
   }
 
   @Patch(':id')
-  update(@Param('id', ParseIntPipe) id: number, @Body() updateLoadoutDto: UpdateLoadoutDto) {
+  update(@Param('id', customIdPipe) id: number, @Body() updateLoadoutDto: UpdateLoadoutDto) {
     return this.loadoutService.update(id, updateLoadoutDto);
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number) {
+  remove(@Param('id', customIdPipe) id: number) {
     return this.loadoutService.remove(id);
   }
 }

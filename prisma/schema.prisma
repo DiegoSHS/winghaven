@@ -24,6 +24,8 @@ model Weapon {
   attachmentId     Int?
   loadout          Loadout[]
   WeaponAttachment WeaponAttachment[]
+  Game             Game?              @relation(fields: [gameId], references: [id])
+  gameId           Int?
 
   @@index([name])
 }
@@ -98,4 +100,14 @@ model LoadoutAttachment {
   Attachment Attachment @relation(fields: [attachmentId], references: [id])
 
   @@id([loadoutId, attachmentId])
+}
+
+model Game {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Weapon    Weapon[]
+
+  @@index([name])
 }

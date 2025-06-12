@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe 
 import { WeaponCategoryService } from './weapon-category.service';
 import { CreateWeaponCategoryDto } from './dto/create-weapon-category.dto';
 import { UpdateWeaponCategoryDto } from './dto/update-weapon-category.dto';
+import { customIdPipe } from 'src/common/validation';
 
 @Controller('weapon-category')
 export class WeaponCategoryController {
@@ -17,7 +18,7 @@ export class WeaponCategoryController {
 
   @Get()
   findAll(
-    @Query('id', ParseIntPipe) id?: number,
+    @Query('id', customIdPipe) id?: number,
   ) {
     if (id) {
       return this.weaponCategoryService.findOne(id);
@@ -26,12 +27,12 @@ export class WeaponCategoryController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateWeaponCategoryDto: UpdateWeaponCategoryDto) {
-    return this.weaponCategoryService.update(+id, updateWeaponCategoryDto);
+  update(@Param('id', customIdPipe) id: number, @Body() updateWeaponCategoryDto: UpdateWeaponCategoryDto) {
+    return this.weaponCategoryService.update(id, updateWeaponCategoryDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.weaponCategoryService.remove(+id);
+  remove(@Param('id', customIdPipe) id: number) {
+    return this.weaponCategoryService.remove(id);
   }
 }

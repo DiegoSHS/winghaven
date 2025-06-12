@@ -36,6 +36,25 @@ export class CloudinaryController {
     return this.cloudinaryService.findAll();
   }
 
+  @Get('recognize/')
+  async recognize(@Req() req: { file: () => Promise<MultipartFile> }) {
+    console.log('Initializing Tesseract.js worker for text recognition...');
+    const worker = await createWorker('eng', OEM.DEFAULT, {
+      logger: info => {
+        if ('progress' in info) {
+          console.log(`Progress: ${info.progress == 1 ? 'Done' : info.progress}`);
+        }
+        console.log(`Status: ${info.status}`);
+      }
+    });
+    console.log('Worker initialized successfully.');
+    console.log('Recognizing text from image test image');
+    const text = await worker.recognize('/test.png');
+    console.log('Extracted text:', text);
+    await worker.terminate();
+    return { text: text.data.text };
+  }
+
   @Get(':id')
   findOne(@Param('id') public_id: string) {
     return this.cloudinaryService.findOne(public_id);

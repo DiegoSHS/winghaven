@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Query } from '@nestjs/common';
 import { CreateScrapperDto } from './dto/create-scrapper.dto';
 import { UpdateScrapperDto } from './dto/update-scrapper.dto';
 import { PuppeteerService } from 'src/puppeteer.service';
@@ -13,8 +13,8 @@ export class ScrapperService {
     return this.puppeteerService.scrap(createScrapperDto.url);
   }
 
-  findAll() {
-    return `This action returns all scrapper`;
+  findAll(@Query('filename') filename: string) {
+    return this.puppeteerService.clean(filename)
   }
 
   findOne(id: number) {

@@ -14,9 +14,13 @@ export class WeaponService {
     })
     return result;
   }
-  async bulkCreate(weapons: CreateWeaponDto[]) {
+  async bulkCreate(gameId, categoryId, weapons: CreateWeaponDto[]) {
     const result = await this.prisma.weapon.createMany({
-      data: weapons,
+      data: weapons.map(weapon => ({
+        ...weapon,
+        gameId,
+        categoryId,
+      })),
     });
     return result;
   }

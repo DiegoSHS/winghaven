@@ -13,9 +13,10 @@ import { AttachmentCategoryModule } from './attachment-category/attachment-categ
 import { WeaponAttachmentModule } from './weapon-attachment/weapon-attachment.module';
 import { WeaponCategoryModule } from './weapon-category/weapon-category.module';
 import { PrismaModule } from './prisma.module';
+import { GameModule } from './game/game.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule, LoadoutModule, LoadoutAttachmentModule, AttachmentCategoryModule, WeaponAttachmentModule, WeaponCategoryModule, PrismaModule],
+  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule, LoadoutModule, LoadoutAttachmentModule, AttachmentCategoryModule, WeaponAttachmentModule, WeaponCategoryModule, PrismaModule, GameModule],
   controllers: [AppController],
   providers: [AppService],
 })

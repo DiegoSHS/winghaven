@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { LoadoutAttachmentService } from './loadout-attachment.service';
 import { CreateLoadoutAttachmentDto } from './dto/create-loadout-attachment.dto';
 import { UpdateLoadoutAttachmentDto } from './dto/update-loadout-attachment.dto';
+import { customIdPipe } from 'src/common/validation';
 
 @Controller('loadout-attachment')
 export class LoadoutAttachmentController {
@@ -14,8 +15,8 @@ export class LoadoutAttachmentController {
 
   @Get()
   findAll(
-    @Query('loadoutId', ParseIntPipe) loadoutId?: number,
-    @Query('attachmentId', ParseIntPipe) attachmentId?: number
+    @Query('loadoutId', customIdPipe) loadoutId?: number,
+    @Query('attachmentId', customIdPipe) attachmentId?: number
   ) {
     if (loadoutId && attachmentId) {
       return this.loadoutAttachmentService.findOne(loadoutId, attachmentId);
@@ -32,16 +33,16 @@ export class LoadoutAttachmentController {
   @Patch()
   update(
     @Body() updateLoadoutAttachmentDto: UpdateLoadoutAttachmentDto,
-    @Query('loadoutId', ParseIntPipe) loadoutId?: number,
-    @Query('attachmentId', ParseIntPipe) attachmentId?: number,
+    @Query('loadoutId', customIdPipe) loadoutId?: number,
+    @Query('attachmentId', customIdPipe) attachmentId?: number,
   ) {
     return this.loadoutAttachmentService.update(loadoutId, attachmentId, updateLoadoutAttachmentDto);
   }
 
   @Delete()
   remove(
-    @Query('loadoutId', ParseIntPipe) loadoutId?: number,
-    @Query('attachmentId', ParseIntPipe) attachmentId?: number,
+    @Query('loadoutId', customIdPipe) loadoutId?: number,
+    @Query('attachmentId', customIdPipe) attachmentId?: number,
   ) {
     return this.loadoutAttachmentService.remove(loadoutId, attachmentId);
   }
