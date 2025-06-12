@@ -1,5 +1,4 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { UpdateSharpDto } from './dto/update-sharp.dto';
 import sharp, { Region, SharpInput } from 'sharp';
 
 @Injectable()

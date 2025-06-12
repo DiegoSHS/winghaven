@@ -1,14 +1,11 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { AdminAndResourceOptions, DeleteApiResponse, ResourceApiResponse, ResponseCallback, UploadApiErrorResponse, UploadApiOptions, UploadApiResponse, UploadResponseCallback, v2 } from 'cloudinary';
 import { MultipartFile } from '@fastify/multipart';
-import { ImageService } from './image.service';
+import { ImageService } from '../image/image.service';
+import { extractBuffer } from 'src/utils';
 
 @Injectable()
 export class CloudinaryService {
-
-  constructor(
-    private readonly image: ImageService
-  ) { }
 
   private uploadOptions: UploadApiOptions = {
     folder: 'wing',
@@ -93,7 +90,7 @@ export class CloudinaryService {
     })
   }
   async create(file: MultipartFile) {
-    const { error, buffer } = await this.image.extractBuffer(file)
+    const { error, buffer } = await extractBuffer(file)
     if (error) throw new BadRequestException(error);
     const uploadResult = await this.uploadImage(buffer)
     return {
@@ -122,7 +119,7 @@ export class CloudinaryService {
   }
 
   async update(public_id: string, file: MultipartFile) {
-    const { error, buffer } = await this.image.extractBuffer(file)
+    const { error, buffer } = await extractBuffer(file)
     if (error) throw new BadRequestException(error);
     const updateResult = await this.updateImage(public_id, buffer)
     return {

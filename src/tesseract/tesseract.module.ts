@@ -3,5 +3,6 @@ import { TesseractService } from './tesseract.service';
 
 @Module({
   providers: [TesseractService],
+  exports: [TesseractService],
 })
 export class TesseractModule { }

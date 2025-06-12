@@ -1,12 +1,8 @@
-import { Controller, Get, Post, Param, Delete, Req, Put, InternalServerErrorException } from '@nestjs/common';
+import { Controller, Get, Post, Param, Delete, Req, Put } from '@nestjs/common';
 import { CloudinaryService } from './cloudinary.service';
 import { MultipartFile } from '@fastify/multipart';
-import { createWorker, OEM } from "tesseract.js";
 import { PrismaService } from 'src/prisma.service';
-import sharp from 'sharp';
-import { TesseractService } from 'src/tesseract/tesseract.service';
-import { SharpService } from 'src/sharp/sharp.service';
-import { ImageService } from './image.service';
+import { ImageService } from '../image/image.service';
 
 @Controller('cloudinary')
 export class CloudinaryController {

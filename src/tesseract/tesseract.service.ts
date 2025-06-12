@@ -1,13 +1,11 @@
 import { Injectable, InternalServerErrorException, OnModuleInit } from '@nestjs/common';
-import { createWorker, ImageLike, OEM, Worker } from 'tesseract.js';
+import { createWorker, ImageLike, Worker } from 'tesseract.js';
 
 @Injectable()
 export class TesseractService implements OnModuleInit {
-  constructor(
-    private worker: Worker
-  ) { }
+  private worker: Worker;
   async onModuleInit() {
-    this.worker = await createWorker('eng', OEM.DEFAULT);
+    this.worker = await createWorker();
   }
   recognize(image: ImageLike) {
     try {
