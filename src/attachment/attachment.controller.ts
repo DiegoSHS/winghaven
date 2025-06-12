@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { AttachmentService } from './attachment.service';
 import { CreateAttachmentDto } from './dto/create-attachment.dto';
 import { UpdateAttachmentDto } from './dto/update-attachment.dto';
+import { customIdPipe } from 'src/common/validation';
 
 @Controller('attachment')
 export class AttachmentController {
@@ -17,7 +18,7 @@ export class AttachmentController {
 
   @Get()
   findAll(
-    @Query('id', ParseIntPipe) id?: number,
+    @Query('id', customIdPipe) id?: number,
   ) {
     if (id) {
       return this.attachmentService.findOne(id);
@@ -26,12 +27,12 @@ export class AttachmentController {
   }
 
   @Patch(':id')
-  update(@Param('id', ParseIntPipe) id: number, @Body() updateAttachmentDto: UpdateAttachmentDto) {
+  update(@Param('id', customIdPipe) id: number, @Body() updateAttachmentDto: UpdateAttachmentDto) {
     return this.attachmentService.update(id, updateAttachmentDto);
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number) {
+  remove(@Param('id', customIdPipe) id: number) {
     return this.attachmentService.remove(id);
   }
 }

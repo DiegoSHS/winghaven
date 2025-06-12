@@ -11,12 +11,12 @@ export class WeaponController {
   @Post()
   create(
     @Body('data') createWeaponDto: CreateWeaponDto | CreateWeaponDto[],
-    @Body('gameId') gameId?: number,
-    @Body('categoryId', customIdPipe) categoryId?: number,
+    @Body('gameId', customIdPipe) gameId?: number,
+    @Body('weaponCategoryId', customIdPipe) weaponCategoryId?: number,
   ) {
     if (Array.isArray(createWeaponDto)) {
-      if (!gameId || !categoryId) throw new BadRequestException('gameId and categoryId are required for bulk creation');
-      return this.weaponService.bulkCreate(gameId, categoryId, createWeaponDto);
+      if (!gameId || !weaponCategoryId) throw new BadRequestException('gameId and categoryId are required for bulk creation');
+      return this.weaponService.bulkCreate(gameId, weaponCategoryId, createWeaponDto);
     }
     return this.weaponService.create(createWeaponDto);
   }

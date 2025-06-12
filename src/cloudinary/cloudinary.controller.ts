@@ -1,34 +1,27 @@
-import { Controller, Get, Post, Param, Delete, Req, Put } from '@nestjs/common';
+import { Controller, Get, Post, Param, Delete, Req, Put, InternalServerErrorException } from '@nestjs/common';
 import { CloudinaryService } from './cloudinary.service';
 import { MultipartFile } from '@fastify/multipart';
 import { createWorker, OEM } from "tesseract.js";
+import { PrismaService } from 'src/prisma.service';
+import sharp from 'sharp';
+import { TesseractService } from 'src/tesseract/tesseract.service';
+import { SharpService } from 'src/sharp/sharp.service';
+import { ImageService } from './image.service';
 
 @Controller('cloudinary')
 export class CloudinaryController {
-  constructor(private readonly cloudinaryService: CloudinaryService) { }
+  constructor(
+    private readonly cloudinaryService: CloudinaryService,
+    private readonly prisma: PrismaService,
+    private readonly image: ImageService
+  ) { }
   @Post()
   async create(@Req() req: { file: () => Promise<MultipartFile> }) {
     console.log('Creating a new image in Cloudinary...');
-    console.log('Initializing Tesseract.js worker...');
-    const worker = await createWorker('eng', OEM.DEFAULT, {
-      logger: info => {
-        if ('progress' in info) {
-          console.log(`Progress: ${info.progress == 1 ? 'Done' : info.progress}`);
-        }
-        console.log(`Status: ${info.status}`);
-      }
-    })
-    console.log('Worker initialized successfully.');
-    console.log('Loading Tesseract.js worker...');
-    await worker.load();
-    console.log('Worker loaded successfully.');
     const file = await req.file();
     const result = await this.cloudinaryService.create(file)
     const url = result.data.secure_url
     console.log('Recognizing text from image URL:', url);
-    const text = await worker.recognize(url);
-    console.log('Extracted text:', text);
-    await worker.terminate()
     return result;
   }
   @Get()
@@ -37,22 +30,13 @@ export class CloudinaryController {
   }
 
   @Get('recognize/')
-  async recognize(@Req() req: { file: () => Promise<MultipartFile> }) {
+  async recognize() {
     console.log('Initializing Tesseract.js worker for text recognition...');
-    const worker = await createWorker('eng', OEM.DEFAULT, {
-      logger: info => {
-        if ('progress' in info) {
-          console.log(`Progress: ${info.progress == 1 ? 'Done' : info.progress}`);
-        }
-        console.log(`Status: ${info.status}`);
-      }
-    });
-    console.log('Worker initialized successfully.');
-    console.log('Recognizing text from image test image');
-    const text = await worker.recognize('/test.png');
-    console.log('Extracted text:', text);
-    await worker.terminate();
-    return { text: text.data.text };
+    const texts = await this.image.cropAndRecognize()
+    const extractedTexts = texts.filter(text => text.length > 5);
+    console.log('Extracted texts:', extractedTexts);
+    console.log('Image processed successfully.');
+    return { message: 'Text recognition completed successfully.' };
   }
 
   @Get(':id')

@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { AttachmentCategoryService } from './attachment-category.service';
 import { CreateAttachmentCategoryDto } from './dto/create-attachment-category.dto';
 import { UpdateAttachmentCategoryDto } from './dto/update-attachment-category.dto';
+import { customIdPipe } from 'src/common/validation';
 
 @Controller('attachment-category')
 export class AttachmentCategoryController {
@@ -17,7 +18,7 @@ export class AttachmentCategoryController {
 
   @Get()
   findAll(
-    @Query('id', ParseIntPipe) id?: number,
+    @Query('id', customIdPipe) id?: number,
   ) {
     if (id) {
       return this.attachmentCategoryService.findOne(id);
@@ -26,12 +27,12 @@ export class AttachmentCategoryController {
   }
 
   @Patch(':id')
-  update(@Param('id', ParseIntPipe) id: number, @Body() updateAttachmentCategoryDto: UpdateAttachmentCategoryDto) {
+  update(@Param('id', customIdPipe) id: number, @Body() updateAttachmentCategoryDto: UpdateAttachmentCategoryDto) {
     return this.attachmentCategoryService.update(id, updateAttachmentCategoryDto);
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number) {
+  remove(@Param('id', customIdPipe) id: number) {
     return this.attachmentCategoryService.remove(id);
   }
 }

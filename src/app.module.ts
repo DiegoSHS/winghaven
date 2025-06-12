@@ -14,9 +14,11 @@ import { WeaponAttachmentModule } from './weapon-attachment/weapon-attachment.mo
 import { WeaponCategoryModule } from './weapon-category/weapon-category.module';
 import { PrismaModule } from './prisma.module';
 import { GameModule } from './game/game.module';
+import { TesseractModule } from './tesseract/tesseract.module';
+import { SharpModule } from './sharp/sharp.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule, LoadoutModule, LoadoutAttachmentModule, AttachmentCategoryModule, WeaponAttachmentModule, WeaponCategoryModule, PrismaModule, GameModule],
+  imports: [ConfigModule.forRoot(), WeaponModule, ScrapperModule, CloudinaryModule, AttachmentModule, LoadoutModule, LoadoutAttachmentModule, AttachmentCategoryModule, WeaponAttachmentModule, WeaponCategoryModule, PrismaModule, GameModule, TesseractModule, SharpModule],
   controllers: [AppController],
   providers: [AppService],
 })

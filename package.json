@@ -33,6 +33,7 @@
     "puppeteer-core": "^24.10.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
+    "sharp": "^0.34.2",
     "tesseract.js": "^6.0.1"
   },
   "devDependencies": {

@@ -1,9 +1,15 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { AdminAndResourceOptions, DeleteApiResponse, ResourceApiResponse, ResponseCallback, UploadApiErrorResponse, UploadApiOptions, UploadApiResponse, UploadResponseCallback, v2 } from 'cloudinary';
 import { MultipartFile } from '@fastify/multipart';
+import { ImageService } from './image.service';
 
 @Injectable()
 export class CloudinaryService {
+
+  constructor(
+    private readonly image: ImageService
+  ) { }
+
   private uploadOptions: UploadApiOptions = {
     folder: 'wing',
     resource_type: 'image',
@@ -15,24 +21,7 @@ export class CloudinaryService {
     max_results: 30,
     fields: ['public_id', 'secure_url'],
   }
-  private async extractBuffer(data: MultipartFile) {
-    try {
-      console.log('Extracting buffer from:', data.filename)
-      const buffer = await data.toBuffer()
-      if (!buffer || buffer.length === 0) {
-        throw new Error('File is empty or not readable')
-      }
-      return {
-        error: null,
-        buffer,
-      }
-    } catch (error) {
-      return {
-        error: error.message as string,
-        buffer: Buffer.from([]),
-      }
-    }
-  }
+
   private uploadImage(buffer: Buffer) {
     return new Promise((
       resolve: (value: UploadApiResponse) => void,
@@ -104,12 +93,8 @@ export class CloudinaryService {
     })
   }
   async create(file: MultipartFile) {
-    const { error, buffer } = await this.extractBuffer(file)
-    if (error) return {
-      error,
-      data: null,
-      message: 'Failed to extract file buffer',
-    }
+    const { error, buffer } = await this.image.extractBuffer(file)
+    if (error) throw new BadRequestException(error);
     const uploadResult = await this.uploadImage(buffer)
     return {
       error: null as string,
@@ -137,12 +122,8 @@ export class CloudinaryService {
   }
 
   async update(public_id: string, file: MultipartFile) {
-    const { error, buffer } = await this.extractBuffer(file)
-    if (error) return {
-      error,
-      data: null,
-      message: 'Failed to extract file buffer',
-    }
+    const { error, buffer } = await this.image.extractBuffer(file)
+    if (error) throw new BadRequestException(error);
     const updateResult = await this.updateImage(public_id, buffer)
     return {
       data: updateResult,
