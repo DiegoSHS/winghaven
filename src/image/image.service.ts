@@ -17,6 +17,13 @@ export class ImageService {
     const text = await this.tesseract.recognize(buffer);
     return text
   }
+  async recognizeArea(file?: MultipartFile) {
+    const croppedImage = await this.sharp.crop('./test.png', {
+      left: 1300, top: 79, width: 200, height: 30
+    })
+    const { data: { text } } = await this.tesseract.recognize(croppedImage)
+    return this.tesseract.clear(text)
+  }
   async cropAndRecognize(file?: MultipartFile) {
     //const { error, buffer: _ } = await this.extractBuffer(file)
     //if (error) throw new InternalServerErrorException(error);
@@ -31,7 +38,7 @@ export class ImageService {
       { left: 1470, top: 840, width: 180, height: 100 },
       { left: 1506, top: 340, width: 180, height: 100 },
     ]);
-    const recognizedTexts = await this.tesseract.recognizeMultiple(croppedImages);
+    const recognizedTexts = await this.tesseract.recognizeMultiple(croppedImages)
     return recognizedTexts.map(({ data }) => this.tesseract.clear(data.text))
   }
 }

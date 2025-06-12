@@ -29,6 +29,19 @@ export class CloudinaryController {
   async recognize() {
     console.log('Initializing Tesseract.js worker for text recognition...');
     const texts = await this.image.cropAndRecognize()
+    const weaponInfo = await this.image.recognizeArea();
+    console.log(weaponInfo)
+    const weaponName = weaponInfo.split(' ')[0]
+    console.log('Recognized weapon name:', weaponName);
+    const weaponCategoryName = weaponInfo.split(' ').slice(1).join(' ')
+    const weapon = await this.prisma.weapon.findFirst({
+      where: { name: { contains: weaponName, mode: 'insensitive' } }
+    })
+    console.log('Weapon:', weapon);
+    const weaponCategory = await this.prisma.weaponCategory.findFirst({
+      where: { name: { contains: weaponCategoryName, mode: 'insensitive' } }
+    })
+    console.log('Weapon category:', weaponCategory);
     const extractedTexts = texts.filter(text => text.length > 5);
     const result = extractedTexts.map(text => {
       return text
@@ -50,7 +63,7 @@ export class CloudinaryController {
     });
     const attCat = await this.prisma.attachmentCategory.findMany({
       where: {
-        OR: attachmentCatFilter as any[]
+        OR: attachmentCatFilter as any[],
       }
     })
     const attachmentFilter = result.map(item => {
@@ -58,7 +71,14 @@ export class CloudinaryController {
     });
     const attachments = await this.prisma.attachment.findMany({
       where: {
-        OR: attachmentFilter as any[]
+        OR: attachmentFilter as any[],
+        AND: [
+          {
+            attachmentCategoryId: {
+              in: attCat.map(cat => cat.id)
+            }
+          }
+        ]
       }
     })
     console.log(attachments)

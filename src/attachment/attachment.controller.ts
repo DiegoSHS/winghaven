@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, Put } from '@nestjs/common';
 import { AttachmentService } from './attachment.service';
 import { CreateAttachmentDto } from './dto/create-attachment.dto';
 import { UpdateAttachmentDto } from './dto/update-attachment.dto';
@@ -28,7 +28,7 @@ export class AttachmentController {
     }
     return this.attachmentService.findAll();
   }
-  @Get('/search')
+  @Get('search')
   search(@Query('name') name) {
     return this.attachmentService.findByName(name);
   }
@@ -36,7 +36,13 @@ export class AttachmentController {
   update(@Param('id', customIdPipe) id: number, @Body() updateAttachmentDto: UpdateAttachmentDto) {
     return this.attachmentService.update(id, updateAttachmentDto);
   }
-
+  @Put()
+  updateBulk(
+    @Body('data') updateAttachmentDto: UpdateAttachmentDto,
+    @Body('updateIds') updateIds: number[],
+  ) {
+    return this.attachmentService.updateMany(updateAttachmentDto, updateIds);
+  }
   @Delete(':id')
   remove(@Param('id', customIdPipe) id: number) {
     return this.attachmentService.remove(id);

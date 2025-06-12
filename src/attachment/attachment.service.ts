@@ -58,6 +58,17 @@ export class AttachmentService {
     return result;
   }
 
+  async updateMany(
+    updateAttachmentDto: UpdateAttachmentDto,
+    updateIds: number[],
+  ) {
+    const result = await this.prisma.attachment.updateMany({
+      where: { id: { in: updateIds } },
+      data: updateAttachmentDto,
+    });
+    return result;
+  }
+
   async remove(id: number) {
     const result = this.prisma.attachment.delete({
       where: { id },

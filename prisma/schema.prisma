@@ -21,7 +21,6 @@ model Weapon {
   updatedAt        DateTime           @updatedAt
   WeaponCategory   WeaponCategory?    @relation(fields: [weaponCategoryId], references: [id])
   weaponCategoryId Int?
-  attachmentId     Int?
   loadout          Loadout[]
   WeaponAttachment WeaponAttachment[]
   Game             Game?              @relation(fields: [gameId], references: [id])
