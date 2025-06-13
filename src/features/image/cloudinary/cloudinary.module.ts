@@ -8,6 +8,6 @@ import { ImageModule } from '../image.module';
   imports: [ImageModule],
   controllers: [CloudinaryController],
   providers: [CloudinaryProvider, CloudinaryService],
-  exports: [CloudinaryProvider, CloudinaryService,],
+  exports: [CloudinaryProvider, CloudinaryService],
 })
 export class CloudinaryModule { }

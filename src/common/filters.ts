@@ -15,10 +15,13 @@ export class AllExceptionsFilter implements ExceptionFilter {
             exception instanceof HttpException
                 ? exception.getResponse()
                 : 'Internal server error';
-
+        const errorMessage =
+            typeof message === 'string'
+                ? message
+                : (message as any).message || 'Internal server error';
         response.statusCode = status;
         response.send({
-            message,
+            message: errorMessage,
             data: null,
             error: 'Something went wrong',
         });
