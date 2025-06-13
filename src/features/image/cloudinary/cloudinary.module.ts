@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { CloudinaryService } from './cloudinary.service';
 import { CloudinaryController } from './cloudinary.controller';
 import { CloudinaryProvider } from './cloudinary.provider';
-import { ImageModule } from 'src/image/image.module';
+import { ImageModule } from '../image.module';
 
 @Module({
   imports: [ImageModule],

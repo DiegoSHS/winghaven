@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, BadRequestException } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, BadRequestException, Put } from '@nestjs/common';
 import { WeaponService } from './weapon.service';
 import { CreateWeaponDto } from './dto/create-weapon.dto';
 import { UpdateWeaponDto } from './dto/update-weapon.dto';
@@ -29,7 +29,7 @@ export class WeaponController {
     return this.weaponService.findAll();
   }
 
-  @Patch(':id')
+  @Put(':id')
   update(@Param('id', customIdPipe) id: number, @Body() updateWeaponDto: UpdateWeaponDto) {
     return this.weaponService.update(id, updateWeaponDto);
   }

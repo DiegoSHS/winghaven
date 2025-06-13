@@ -2,7 +2,7 @@ import { Controller, Get, Post, Param, Delete, Req, Put } from '@nestjs/common';
 import { CloudinaryService } from './cloudinary.service';
 import { MultipartFile } from '@fastify/multipart';
 import { PrismaService } from 'src/prisma.service';
-import { ImageService } from '../image/image.service';
+import { ImageService } from '../image.service';
 
 @Controller('cloudinary')
 export class CloudinaryController {

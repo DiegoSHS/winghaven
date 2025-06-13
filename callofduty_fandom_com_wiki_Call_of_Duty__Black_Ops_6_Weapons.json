@@ -1,0 +1,733 @@
+[
+  {
+    "category": "Campaign Levels of Call of Duty: Black Ops 6",
+    "data": [
+      {
+        "subCategory": "Missions",
+        "data": [
+          "Bishop Takes Rook",
+          "Blood Feud",
+          "Most Wanted",
+          "Hunting Season",
+          "The Cradle",
+          "Emergence",
+          "High Rollers",
+          "Ground Control",
+          "Under the Radar",
+          "Separation Anxiety",
+          "Checkmate"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Characters in Call of Duty: Black Ops 6",
+    "data": [
+      {
+        "subCategory": "Rogue Black Ops",
+        "data": [
+          "Troy Marshall",
+          "Frank Woods",
+          "Russell Adler",
+          "William \"Case\" Calderon",
+          "Felix Neumann",
+          "Sevati \"Sev\" Dumas"
+        ]
+      },
+      {
+        "subCategory": "MI6",
+        "data": [
+          "Helen Park"
+        ]
+      },
+      {
+        "subCategory": "Civilians",
+        "data": [
+          "Miriam McKenna",
+          "Badeaux",
+          "Gabriel Armato",
+          "Lee Grisham",
+          "Anne Johannsson"
+        ]
+      },
+      {
+        "subCategory": "United States Army/United States Air Force",
+        "data": [
+          "Lawrence Sims",
+          "Riley Flanagan",
+          "Diesel 2-1"
+        ]
+      },
+      {
+        "subCategory": "Iraqi Government",
+        "data": [
+          "Saeed Alawi"
+        ]
+      },
+      {
+        "subCategory": "Luttazzi Crime Family",
+        "data": [
+          "The Godmother"
+        ]
+      },
+      {
+        "subCategory": "Multiplayer",
+        "data": [
+          "Archie Atom",
+          "Zombie Santa",
+          "Young-hee"
+        ]
+      },
+      {
+        "subCategory": "Operators",
+        "data": [
+          "Rogue Black Ops",
+          "Russell Adler",
+          "Helen Park",
+          "Frank Woods",
+          "Hasib Nazir",
+          "Tamira \"Westpoint\" Chambers",
+          "Witold Bayan",
+          "Yara Alvarez",
+          "Callum Payne",
+          "Troy Marshall",
+          "Grigori Weaver",
+          "Maya Aguinaldo",
+          "Sevati \"Sev\" Dumas",
+          "Goliath",
+          "The Replacer",
+          "Eric Samuels",
+          "Competitor",
+          "Lion Mask VIP",
+          "Leonardo",
+          "Donatello",
+          "Raphael",
+          "Michelangelo",
+          "Splinter",
+          "Jason Hudson",
+          "Jay",
+          "Silent Bob",
+          "Seth Rogen",
+          "Vikhor \"Stitch\" Kuzmin",
+          "Crimson One",
+          "Brutus",
+          "Klaus",
+          "Volta Rossi",
+          "Jackson Caine",
+          "Arak Niran",
+          "Alejo \"Toro\" Carasco",
+          "Tess Bailey",
+          "Harry Stone",
+          "Mackenzie Carver",
+          "Elizabeth Grey",
+          "Competitor",
+          "Front Man",
+          "Masked Worker",
+          "Masked Soldier",
+          "Masked Manager",
+          "Panther Mask VIP",
+          "Young-hee",
+          "Nocturne",
+          "Vortex",
+          "T-800",
+          "Mace",
+          "R0-Z3",
+          "John Black Ops",
+          "Omen",
+          "Eve Macarro",
+          "Dominique \"Domino\" Tam",
+          "Mil-Sim USEF"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Factions in Call of Duty: Black Ops 6",
+    "data": [
+      {
+        "subCategory": "Playable",
+        "data": [
+          "",
+          "CIA",
+          "Rogue Black Ops",
+          "",
+          "Rogue Black Ops",
+          "",
+          "Crimson One",
+          "",
+          "Project Janus"
+        ]
+      },
+      {
+        "subCategory": "Hostile",
+        "data": [
+          "",
+          "Pantheon",
+          "",
+          "Iraqi Armed Forces",
+          "The Guild",
+          "Luttazzi Crime Family",
+          "",
+          "United States Capitol Police",
+          "Zombies",
+          "",
+          "Project Janus",
+          "French Syndicate"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Weapons in Call of Duty: Black Ops 6",
+    "data": [
+      {
+        "subCategory": "Assault Rifles",
+        "data": [
+          "XM4",
+          "AK-74",
+          "AMES 85",
+          "GPR 91",
+          "Model L",
+          "Goblin Mk2",
+          "AS VAL",
+          "Krig C",
+          "Cypher 091",
+          "Kilo 141",
+          "CR-56 AMAX",
+          "FFAR 1"
+        ]
+      },
+      {
+        "subCategory": "Submachine Guns",
+        "data": [
+          "C9",
+          "KSV",
+          "Tanto .22",
+          "PP-919",
+          "Jackal PDW",
+          "Kompakt 92",
+          "Saug",
+          "PPSh-41",
+          "Ladra",
+          "LC10"
+        ]
+      },
+      {
+        "subCategory": "Light Machine Guns",
+        "data": [
+          "PU-21",
+          "XMG",
+          "GPMG-7",
+          "Feng 82"
+        ]
+      },
+      {
+        "subCategory": "Sniper Rifles",
+        "data": [
+          "LW3A1 Frostline",
+          "SVD",
+          "LR 7.62",
+          "AMR Mod 4",
+          "HDR"
+        ]
+      },
+      {
+        "subCategory": "Launchers",
+        "data": [
+          "CIGMA 2B",
+          "HE-1"
+        ]
+      },
+      {
+        "subCategory": "Special",
+        "data": [
+          "Sirin 9mm",
+          "D1.3 Sector",
+          "Nail Gun",
+          "Olympia",
+          "Archangel Launcher",
+          "Hand Cannon",
+          "War Machine",
+          "Death Machine",
+          "Grim Reaper"
+        ]
+      },
+      {
+        "subCategory": "Attachments",
+        "data": [
+          "PrismaTech Reflex",
+          "Otero Red Dot",
+          "Merlin Mini",
+          "Willis 3x",
+          "Volzhskiy Reflex",
+          "OM3 '92 Holo",
+          "Accu-Spot Reflex",
+          "K&S Red Dot",
+          "Otero Micro Dot",
+          "Pinpoint Holoscout",
+          "Dobrych 4x",
+          "Merlin Reflex",
+          "Jason Armory 2x",
+          "Pinpoint Hybrid",
+          "PrismaPoint Hybrid",
+          "Redwell Reflex",
+          "R&K Multizoom",
+          "Accu-Spot Ultra Holo",
+          "PrismaTech 4x",
+          "Remuda Mini Reflex",
+          "Blandwell 7x Scope",
+          "Kepler Microflex",
+          "Kepler Red Dot",
+          "Dobrych MF Reflex",
+          "VMF Variable Scope",
+          "K&S Thermal Holo",
+          "Otero Thermal 2x",
+          "Remuda Range Finder",
+          "Redwell Custom Zoom",
+          "Thermal 6x",
+          "Remuda Dual Zoom",
+          "Iron Sight",
+          "Kepler Pistol Scope",
+          "SVD Scope",
+          "Hawker Hybrid",
+          "Carry Handle Sight",
+          "Suppressor",
+          "Compensator",
+          "Muzzle Brake",
+          "Ported Compensator",
+          "Modified Choke",
+          "Full Choke",
+          "Monolithic Suppressor",
+          "Gain-Twist Barrel",
+          "CHF Barrel",
+          "Long Barrel",
+          "Short Barrel",
+          "Reinforced Barrel",
+          "Suppressed Gain-Twist Barrel",
+          "Suppressed Long Barrel",
+          "Suppressed Reinforced Barrel",
+          "Suppressed CHF Barrel",
+          "Integrated Suppressor Barrel",
+          "Combat Barrel",
+          "Heavy Barrel",
+          "Quick Load Barrel",
+          "Vertical Foregrip",
+          "Lightweight Foregrip",
+          "Precision Foregrip",
+          "Marksman Foregrip",
+          "Ranger Foregrip",
+          "Weighted Foregrip",
+          "Weighted Handguard",
+          "Lightweight Handguard",
+          "Marksman Handguard",
+          "Precision Handguard",
+          "Ranger Handguard",
+          "Launcher - Standard",
+          "M203",
+          "GP-25",
+          "Launcher - Smoke",
+          "Launcher - High Explosive",
+          "Launcher - Drill Charge",
+          "Crossbar",
+          "Crossbow",
+          "Lightweight Bipod",
+          "Marksman Bipod",
+          "G-Grip",
+          "Weighted Pad",
+          "Lightweight Pad",
+          "Ranger Pad",
+          "Precision Pad",
+          "Marksman Pad",
+          "Extended Mag I",
+          "Extended Mag II",
+          "Extended Mag III",
+          "Extended Mag IV",
+          "Flip Mag",
+          "Fast Mag I",
+          "Fast Mag II",
+          "Fast Mag III",
+          "Explosive Blades",
+          "Ricochet Blades",
+          "Belt-Fed",
+          "Full-Auto Extended Mag",
+          "C9 10mm Auto 30-Round Mags",
+          "Stripper Clip",
+          "Quickdraw Grip",
+          "Commando Grip",
+          "Assault Grip",
+          "Ergonomic Grip",
+          "CQB Grip",
+          "Quickdraw Lever",
+          "Assault Lever",
+          "Commando Lever",
+          "Ergonomic Lever",
+          "CQB Lever",
+          "Quickdraw Riser",
+          "Combat Riser",
+          "Commando Riser",
+          "CQB Riser",
+          "Ergonomic Riser",
+          "Light Riser",
+          "Infiltrator Riser",
+          "Heavy Riser",
+          "Balanced Riser",
+          "Heavy Stock",
+          "Light Stock",
+          "Balanced Stock",
+          "Combat Stock",
+          "Infiltrator Stock",
+          "No Stock",
+          "Full Stock",
+          "Quickdraw Stock",
+          "Agility Stock",
+          "Ergonomic Stock",
+          "Weighted Stock",
+          "Akimbo",
+          "Buffer Weight Stock",
+          "Overclocked Stock",
+          "Balanced Pad",
+          "Infiltrator Pad",
+          "Combat Pad",
+          "Cut-Off Stock",
+          "Tactical Laser",
+          "Steady Aim Laser",
+          "Strelok Laser",
+          "Fast Motion Laser",
+          "Target Laser",
+          "FMJ",
+          "Recoil Springs",
+          "Overpressured",
+          "Rapid Fire",
+          "12 Gauge Slug",
+          "12 Gauge Dragon's Breath",
+          "Burst Fire",
+          "AEK-973 Auto Mod",
+          "Binary Trigger",
+          "SWAT 5.56 Grau Conversion",
+          "Goblin Mk2 7.62 Mini-Rocket Conversion",
+          "Fire Select - Semi-Auto"
+        ]
+      },
+      {
+        "subCategory": "Tacticals",
+        "data": [
+          "Concussion",
+          "Flashbang",
+          "Spy Cam",
+          "Smoke",
+          "Prox Alarm",
+          "Stim Shot",
+          "Decoy",
+          "Shock Charge",
+          "Tranquilizer Trap",
+          "Grappling Hook",
+          "Cymbal Monkey",
+          "LT53 Kazimir",
+          "Incantations"
+        ]
+      },
+      {
+        "subCategory": "Wonder Weapons",
+        "data": [
+          "Ray Gun",
+          "DRI-11 Beamsmasher",
+          "Thrustodyne M23",
+          "The Bastard Swords",
+          "Staff of Ice",
+          "Ray Gun Mark II",
+          "Wunderwaffe DG-2"
+        ]
+      },
+      {
+        "subCategory": "Manufacturers",
+        "data": [
+          "BlackCell",
+          "Expedite Firearms",
+          "Tiber",
+          "First Raunch",
+          "Hawker",
+          "Maisel",
+          "Singuard Arms",
+          "XRK"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Vehicles in Call of Duty: Black Ops 6",
+    "data": [
+      {
+        "subCategory": "Ground Vehicles",
+        "data": [
+          "Dirt Bike",
+          "Technical",
+          "Cargo Truck",
+          "Rover",
+          "A.G.R. Mk 1"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "List of Maps in Call of Duty: Black Ops 6",
+    "data": [
+      {
+        "subCategory": "Included",
+        "data": [
+          "Babylon",
+          "Derelict",
+          "Lowtown",
+          "Payback",
+          "Protocol",
+          "Red Card",
+          "Rewind",
+          "SCUD",
+          "Skyline",
+          "Subsonic",
+          "Vault",
+          "Vorkuta",
+          "Gala",
+          "Pit",
+          "Stakeout",
+          "Warhead",
+          "Liberty Falls",
+          "Terminus"
+        ]
+      },
+      {
+        "subCategory": "Season One",
+        "data": [
+          "Hideout",
+          "Extraction",
+          "Hacienda",
+          "Nuketown Holiday",
+          "Babylon",
+          "Heirloom",
+          "Racket",
+          "Citadelle des Morts"
+        ]
+      },
+      {
+        "subCategory": "Season Three",
+        "data": [
+          "Barrage",
+          "Firing Range",
+          "Haven",
+          "Blazetown",
+          "Nomad",
+          "Signal",
+          "Shattered Veil"
+        ]
+      },
+      {
+        "subCategory": "Additional Feature",
+        "data": [
+          "Firing Range"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Soundtrack of Call of Duty: Black Ops 6",
+    "data": [
+      {
+        "subCategory": "Official Soundtrack",
+        "data": [
+          "Prelude",
+          "Black Ops 6",
+          "Raining the Fire",
+          "Bishop Takes Rook",
+          "Don't Get Yourself Killed",
+          "Hunting Alawi",
+          "Traitor on the Run",
+          "Avalon",
+          "Sevati Dumas",
+          "Market Meyhem",
+          "Capital Station",
+          "Black Site",
+          "Rescue Adler",
+          "Death Machine",
+          "Plan B",
+          "The Great Escape",
+          "Gone Rogue",
+          "Sandbox",
+          "Iraq",
+          "Scud Missile Threat",
+          "The Palace",
+          "Cosper Solutions",
+          "Abomination",
+          "Falling",
+          "The Executive Director",
+          "Coming To",
+          "Revelation",
+          "The Canals",
+          "Reset the Slots",
+          "Casino Luttazzi",
+          "Vaultbreaker",
+          "Beatdown",
+          "Fucina",
+          "Russell Sims",
+          "Airport Assault",
+          "Find Gusev",
+          "Cross the Tarmac",
+          "Sabotage",
+          "The Pantheon",
+          "Find Harrow",
+          "We Have a Guest",
+          "Fractured Memories",
+          "Remembering Vorkuta",
+          "Save Yourself",
+          "Putting the Pieces Together",
+          "Buying Time",
+          "I Want Him Alive",
+          "The Final Stand",
+          "The Cradle",
+          "We've Always Been in the Shadows"
+        ]
+      },
+      {
+        "subCategory": "Citadelle des Morts",
+        "data": [
+          "Slave",
+          "Citadelle des Morts Intro",
+          "Bienvenue à la Citadelle des Morts",
+          "The Veil",
+          "Club Thumper - Dancing Cat",
+          "Club Thumper - Angry Cat",
+          "Lock Down",
+          "Maya",
+          "Solais",
+          "Balmung",
+          "Chaos",
+          "Durendal",
+          "Caliburn",
+          "Club Thumper - Retro Cat",
+          "Club Thumper - Weird Cat",
+          "Citadel Des Morts Rounds",
+          "The Orb",
+          "The Study",
+          "Citadelle des Morts Deathsong",
+          "The Guardian",
+          "Slave - Mr. Peeks' Mix",
+          "Slave - Instrumental"
+        ]
+      },
+      {
+        "subCategory": "Shattered Veil",
+        "data": [
+          "Falling To Pieces",
+          "Samantha's Soul",
+          "Shattered Veil Rounds",
+          "Control",
+          "Shattered Veil Deathsong",
+          "The Artifact",
+          "Call Maintenance (Elevators Down)",
+          "Control - Ambient Mix",
+          "Yeah, Yeah",
+          "Z-Rex",
+          "Shattered Veil Outro",
+          "Falling To Pieces - Mr. Peeks' Mix",
+          "Falling To Pieces - Instrumental"
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Call of Duty Series",
+    "data": [
+      {
+        "subCategory": "Main Games",
+        "data": [
+          "Call of Duty",
+          "2",
+          "3",
+          "4: Modern Warfare",
+          "World at War",
+          "Modern Warfare 2",
+          "Black Ops",
+          "Modern Warfare 3",
+          "Black Ops II",
+          "Ghosts",
+          "Advanced Warfare",
+          "Black Ops III",
+          "Infinite Warfare",
+          "WWII",
+          "Black Ops 4",
+          "Modern Warfare",
+          "Black Ops Cold War",
+          "Vanguard",
+          "Modern Warfare II",
+          "Modern Warfare III",
+          "Black Ops 7"
+        ]
+      },
+      {
+        "subCategory": "Expanded Universe",
+        "data": [
+          "Modern Warfare 2: Ghost",
+          "GKNOVA6",
+          "Find Makarov: Operation Kingfish",
+          "Soap's Journal",
+          "Rightful King",
+          "Devil's Breath",
+          "CourtOptic2055.com",
+          "V.E.R.S.I.O.N.",
+          "Black Ops III comic",
+          "Call of Duty: Zombies Vol. 1",
+          "Call of Duty: Zombies Vol. 2",
+          "Black Ops 4 comic",
+          "Pawn Takes Pawn",
+          "Vanguard comic",
+          "The Truth Lies",
+          "Call of Duty film"
+        ]
+      },
+      {
+        "subCategory": "Nintendo DS Games",
+        "data": [
+          "4: Modern Warfare",
+          "World at War",
+          "Modern Warfare: Mobilized",
+          "Black Ops",
+          "Modern Warfare 3: Defiance"
+        ]
+      },
+      {
+        "subCategory": "Other media",
+        "data": [
+          "There's A Soldier In All Of Us",
+          "Find Makarov",
+          "Zombie Labs",
+          "The Vet & The n00b",
+          "Surprise",
+          "The Replacer",
+          "Epic Night Out",
+          "CODnapped",
+          "Aim Down Sights",
+          "Discover Your Power",
+          "Randall Higgins: KillCameraman",
+          "Shadows of Evil The Ride",
+          "Seize Glory",
+          "Screw It, Let's Go To Space",
+          "Reassemble!",
+          "Ultimate Team",
+          "The Lobby"
+        ]
+      },
+      {
+        "subCategory": "Canceled Games",
+        "data": [
+          "Combined Forces",
+          "Devil's Brigade",
+          "Tactics",
+          "Real-Time Card Game",
+          "Vietnam",
+          "Roman Wars",
+          "Advanced Warfare Sequel",
+          "Future Warfare",
+          "Project Zed"
+        ]
+      }
+    ]
+  }
+]

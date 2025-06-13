@@ -1,6 +1,6 @@
 import { MultipartFile } from "@fastify/multipart";
-import { TesseractService } from "src/tesseract/tesseract.service";
-import { SharpService } from "src/sharp/sharp.service";
+import { TesseractService } from "src/features/image/tesseract/tesseract.service";
+import { SharpService } from "src/features/image/sharp/sharp.service";
 import { Injectable, InternalServerErrorException } from "@nestjs/common";
 import { extractBuffer } from "src/utils";
 
@@ -10,7 +10,6 @@ export class ImageService {
     private readonly tesseract: TesseractService,
     private readonly sharp: SharpService
   ) { }
-  async
   async recognize(file: MultipartFile) {
     const { error, buffer } = await extractBuffer(file)
     if (error) throw new InternalServerErrorException(error);
