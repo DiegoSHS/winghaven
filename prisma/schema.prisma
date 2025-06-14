@@ -19,11 +19,11 @@ model Weapon {
   name             String
   createdAt        DateTime           @default(now())
   updatedAt        DateTime           @updatedAt
-  WeaponCategory   WeaponCategory?    @relation(fields: [weaponCategoryId], references: [id])
+  weaponCategory   WeaponCategory?    @relation(fields: [weaponCategoryId], references: [id])
   weaponCategoryId Int?
   loadout          Loadout[]
-  WeaponAttachment WeaponAttachment[]
-  Game             Game?              @relation(fields: [gameId], references: [id])
+  weaponAttachment WeaponAttachment[]
+  game             Game?              @relation(fields: [gameId], references: [id])
   gameId           Int?
 
   @@index([name])
@@ -44,12 +44,12 @@ model Attachment {
   name                 String
   createdAt            DateTime            @default(now())
   updatedAt            DateTime            @updatedAt
-  AttachmentCategory   AttachmentCategory? @relation(fields: [attachmentCategoryId], references: [id])
+  attachmentCategory   AttachmentCategory? @relation(fields: [attachmentCategoryId], references: [id])
   attachmentCategoryId Int?
 
-  WeaponAttachment  WeaponAttachment[]
+  weaponAttachment  WeaponAttachment[]
   LoadoutAttachment LoadoutAttachment[]
-  Game              Game?               @relation(fields: [gameId], references: [id])
+  game              Game?               @relation(fields: [gameId], references: [id])
   gameId            Int?
 
   @@index([name])
@@ -61,15 +61,15 @@ model WeaponAttachment {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  Weapon     Weapon     @relation(fields: [weaponId], references: [id])
-  Attachment Attachment @relation(fields: [attachmentId], references: [id])
+  weapon     Weapon     @relation(fields: [weaponId], references: [id])
+  attachment Attachment @relation(fields: [attachmentId], references: [id])
 
   @@id([weaponId, attachmentId])
 }
 
 model AttachmentCategory {
   id         Int          @id @default(autoincrement())
-  name       String
+  name       String       @unique
   createdAt  DateTime     @default(now())
   updatedAt  DateTime     @updatedAt
   attachment Attachment[]
@@ -84,9 +84,9 @@ model Loadout {
   viable            Boolean             @default(false)
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @updatedAt
-  Weapon            Weapon?             @relation(fields: [weaponId], references: [id])
+  weapon            Weapon?             @relation(fields: [weaponId], references: [id])
   weaponId          Int?
-  LoadoutAttachment LoadoutAttachment[]
+  loadoutAttachment LoadoutAttachment[]
 
   @@index([name])
 }
@@ -97,8 +97,8 @@ model LoadoutAttachment {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  Loadout    Loadout    @relation(fields: [loadoutId], references: [id])
-  Attachment Attachment @relation(fields: [attachmentId], references: [id])
+  loadout    Loadout    @relation(fields: [loadoutId], references: [id])
+  attachment Attachment @relation(fields: [attachmentId], references: [id])
 
   @@id([loadoutId, attachmentId])
 }
@@ -108,8 +108,8 @@ model Game {
   name       String       @unique
   createdAt  DateTime     @default(now())
   updatedAt  DateTime     @updatedAt
-  Weapon     Weapon[]
-  Attachment Attachment[]
+  weapon     Weapon[]
+  attachment Attachment[]
 
   @@index([name])
 }

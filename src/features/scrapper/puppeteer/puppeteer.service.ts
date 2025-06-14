@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
-import { readFile, writeFile } from "fs/promises";
+import { writeFile } from "fs/promises";
 import puppeteer from "puppeteer";
+import { AttachmentCategoryService } from "src/features/attachment-category/attachment-category.service";
 import { AttachmentService } from "src/features/attachment/attachment.service";
 import { GameService } from "src/features/game/game.service";
 import { WeaponCategoryService } from "src/features/weapon-category/weapon-category.service";
 import { WeaponService } from "src/features/weapon/weapon.service";
-import { PrismaService } from "src/prisma.service";
 
 function cleanUndefined<T>(value: T): boolean {
     return value !== undefined
@@ -32,6 +32,7 @@ export class PuppeteerService {
         private readonly gameService: GameService,
         private readonly weaponCategoryService: WeaponCategoryService,
         private readonly attachmentService: AttachmentService,
+        private readonly attachmentCategoryService: AttachmentCategoryService
     ) { }
     generateFileName(url: string): string {
         return url
@@ -73,7 +74,22 @@ export class PuppeteerService {
                             return getElementsText(getElementQS(cat, 'a'))
                         }).flat()
                     const subCategory = getElementsText(getElementQS(row, '.navbox-group')).join('')
+                    const organizedCategory = Array.from(row.querySelectorAll('u > i')).map(el => {
+                        const categoryName = el.textContent.replace(':', '').trim();
+                        const u = el.parentElement;
+                        const links = [];
+                        let node = u.nextSibling;
+                        while (node) {
+                            if (node.nodeType === 1 && node.nodeName === 'A') {
+                                links.push(node.textContent.trim());
+                            }
+                            if (node.nodeType === 1 && node.nodeName === 'U') break; // Siguiente categoría
+                            node = node.nextSibling;
+                        }
+                        return { categoryName, data: links };
+                    })
                     return {
+                        organizedCategory,
                         subCategory,
                         data
                     }
@@ -126,7 +142,7 @@ export class PuppeteerService {
                         }).filter(cleanUndefined),
                         attachments: scrapped.data.map((d) => {
                             if (d.subCategory.toLowerCase().includes('attachments')) {
-                                return d.data.map(turnIntoProperty).filter(cleanUndefined)
+                                return d.organizedCategory
                             }
                         }).filter(cleanUndefined).flat()
                     }
@@ -155,8 +171,14 @@ export class PuppeteerService {
             console.log('Games created:', gameResults.count)
             const weaponCategoryResults = await this.weaponCategoryService.bulkCreate(uniqueCategories)
             console.log('Weapon categories created:', weaponCategoryResults.count)
+            const attachmentCategoriesCreate = cleanedData.map((data) => {
+                return data.attachments.map((att) => ({ name: att.categoryName })).filter(cleanUndefined)
+            }).flat()
+            const attachmentCategoriesResult = await this.attachmentCategoryService.bulkCreate(attachmentCategoriesCreate)
+            console.log('Attachment categories created:', attachmentCategoriesResult.count)
             const games = await this.gameService.findAll()
             const categories = await this.weaponCategoryService.findAll()
+            const attachmentCategories = await this.attachmentCategoryService.findAll()
             const weaponCreate = cleanedData.map((item) => {
                 const { id: gameId } = games.find(game => game.name === item.game)
                 return item.weapons.map(({ weapons, weaponCategory }) => {
@@ -175,10 +197,14 @@ export class PuppeteerService {
             const attachmentCreate = cleanedData.map((item) => {
                 return item.attachments.map((attachment) => {
                     const { id } = games.find(game => game.name === item.game)
-                    return {
-                        name: attachment.name,
-                        gameId: id
-                    }
+                    const { id: attachmentCategoryId } = attachmentCategories.find(cat => cat.name === attachment.categoryName)
+                    return attachment.data.map((att) => {
+                        return {
+                            name: att,
+                            gameId: id,
+                            attachmentCategoryId
+                        }
+                    })
                 })
             }).flat(2)
             const attachmentResults = await this.attachmentService.bulkCreate(attachmentCreate)

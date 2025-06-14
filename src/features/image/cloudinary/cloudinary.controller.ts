@@ -58,31 +58,25 @@ export class CloudinaryController {
         }
       })
       .filter((item) => item);
-    const attachmentCatFilter = result.map(item => {
-      return { name: { contains: item.attachmentCategory, mode: 'insensitive' } }
-    });
-    const attCat = await this.prisma.attachmentCategory.findMany({
-      where: {
-        OR: attachmentCatFilter as any[],
-      }
-    })
-    const attachmentFilter = result.map(item => {
-      return { name: { contains: item.attachmentName, mode: 'insensitive' } }
-    });
-    const attachments = await this.prisma.attachment.findMany({
-      where: {
-        OR: attachmentFilter as any[],
-        AND: [
-          {
-            attachmentCategoryId: {
-              in: attCat.map(cat => cat.id)
+    console.log(result)
+    const attachmentOptions = result.map(item => {
+      return this.prisma.attachmentCategory.findUnique({
+        where: {
+          name: item.attachmentCategory.toLowerCase()
+        }, include: {
+          attachment: {
+            where: {
+              name: {
+                contains: item.attachmentName.toLowerCase(),
+                mode: 'insensitive'
+              },
             }
           }
-        ]
-      }
+        }
+      })
     })
-    console.log(attachments)
-    console.log(attCat)
+    const attachmentOptionsResults = await Promise.all(attachmentOptions);
+    console.log('Attachment options:', attachmentOptionsResults);
     console.log('Image processed successfully.');
     return { message: 'Text recognition completed successfully.' };
   }

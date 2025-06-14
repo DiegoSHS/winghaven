@@ -272,199 +272,94 @@
     ],
     "attachments": [
       {
-        "name": "Slimline Pro"
-      },
-      {
-        "name": "SZ Mini"
-      },
-      {
-        "name": "Cronen Mini Dot"
-      },
-      {
-        "name": "Cronen Mini Pro"
-      },
-      {
-        "name": "SZ Sigma-IV Optic"
-      },
-      {
-        "name": "SZ Minitac-40"
-      },
-      {
-        "name": "XRK On-Point Optic"
-      },
-      {
-        "name": "AIM OP-V4"
-      },
-      {
-        "name": "DF105 Reflex Sight"
-      },
-      {
-        "name": "Monocle CT90"
-      },
-      {
-        "name": "Corvus SOL-76"
-      },
-      {
-        "name": "SZ Recharge-DX"
-      },
-      {
-        "name": "SZ SRO-7"
-      },
-      {
-        "name": "Corio RE-X Pro"
-      },
-      {
-        "name": "Corio Enforcer Optic"
-      },
-      {
-        "name": "SZ Lonewolf Optic"
-      },
-      {
-        "name": "Kazan-Holo"
-      },
-      {
-        "name": "SZ Battle Optic"
-      },
-      {
-        "name": "Corvus Downrange-00"
-      },
-      {
-        "name": "XTEN Angel-40"
-      },
-      {
-        "name": "SZ Holotherm"
-      },
-      {
-        "name": "VLK 4.0 Optic"
-      },
-      {
-        "name": "Schlager 3.4x"
-      },
-      {
-        "name": "FORGE TAC Delta 4"
-      },
-      {
-        "name": "Cronen Zero-P Optic"
-      },
-      {
-        "name": "SZ Bullseye Optic"
-      },
-      {
-        "name": "SZ Aggressor-IR Optic"
-      },
-      {
-        "name": "Schlager Night View"
-      },
-      {
-        "name": "VX350 Thermal Optic"
-      },
-      {
-        "name": "Teplo-OP3 Scope"
-      },
-      {
-        "name": "DR582 Hybrid Sight"
-      },
-      {
-        "name": "Hybrid Firepoint"
-      },
-      {
-        "name": "SZ Vortex-90"
-      },
-      {
-        "name": "BPZ40 Hybrid"
-      },
-      {
-        "name": "SZ Oscar-9"
-      },
-      {
-        "name": "Angel-40 4.8x"
-      },
-      {
-        "name": "Thermo-Optic x9"
-      },
-      {
-        "name": "Teplo Clear Shot"
-      },
-      {
-        "name": "FTAC Charlie7"
-      },
-      {
-        "name": "HMW-20 Optic"
-      },
-      {
-        "name": "Luca Bandera Scope"
-      },
-      {
-        "name": "DS Farsight 11"
-      },
-      {
-        "name": "3x RFL-Optic"
-      },
-      {
-        "name": "Drexsom Prime-90"
-      },
-      {
-        "name": "ARES Clear Shot"
-      },
-      {
-        "name": "SPW 40mm"
-      },
-      {
-        "name": "Hellscream 40mm"
-      },
-      {
-        "name": "KL40-M2"
-      },
-      {
-        "name": "TL40 Fire Drake"
-      },
-      {
-        "name": "Corvus Masterkey"
-      },
-      {
-        "name": "Extended Mags"
-      },
-      {
-        "name": "High Capacity Magazines"
-      },
-      {
-        "name": "Drum Magazines"
-      },
-      {
-        "name": "Small Magazine"
-      },
-      {
-        "name": "Frangible"
-      },
-      {
-        "name": "Hollowpoint"
-      },
-      {
-        "name": "Armor Piercing"
-      },
-      {
-        "name": "Overpressured +P"
-      },
-      {
-        "name": "High Velocity"
-      },
-      {
-        "name": "12 Gauge Explosive"
-      },
-      {
-        "name": "12 Gauge Slug"
-      },
-      {
-        "name": "12 Gauge Dragon's Breath"
-      },
-      {
-        "name": "Blastcap 20\" Bolts"
-      },
-      {
-        "name": "Brightblaze 20\" Bolts"
-      },
-      {
-        "name": "FTAC Caustic 20\" Bolts"
+        "categoryName": "Optics",
+        "data": [
+          "Slimline Pro",
+          "SZ Mini",
+          "Cronen Mini Dot",
+          "Cronen Mini Pro",
+          "SZ Sigma-IV Optic",
+          "SZ Minitac-40",
+          "XRK On-Point Optic",
+          "AIM OP-V4",
+          "DF105 Reflex Sight",
+          "Monocle CT90",
+          "Corvus SOL-76",
+          "SZ Recharge-DX",
+          "SZ SRO-7",
+          "Corio RE-X Pro",
+          "Corio Enforcer Optic",
+          "SZ Lonewolf Optic",
+          "Kazan-Holo",
+          "SZ Battle Optic",
+          "Corvus Downrange-00",
+          "XTEN Angel-40",
+          "SZ Holotherm",
+          "VLK 4.0 Optic",
+          "Schlager 3.4x",
+          "FORGE TAC Delta 4",
+          "Cronen Zero-P Optic",
+          "SZ Bullseye Optic",
+          "SZ Aggressor-IR Optic",
+          "Schlager Night View",
+          "VX350 Thermal Optic",
+          "Teplo-OP3 Scope",
+          "DR582 Hybrid Sight",
+          "Hybrid Firepoint",
+          "SZ Vortex-90",
+          "BPZ40 Hybrid",
+          "SZ Oscar-9",
+          "Angel-40 4.8x",
+          "Thermo-Optic x9",
+          "Teplo Clear Shot",
+          "FTAC Charlie7",
+          "HMW-20 Optic",
+          "Luca Bandera Scope",
+          "DS Farsight 11",
+          "3x RFL-Optic",
+          "Drexsom Prime-90",
+          "ARES Clear Shot"
+        ]
+      },
+      {
+        "categoryName": "Underbarrel",
+        "data": [
+          "SPW 40mm",
+          "Hellscream 40mm",
+          "KL40-M2",
+          "TL40 Fire Drake",
+          "Corvus Masterkey"
+        ]
+      },
+      {
+        "categoryName": "Magazine",
+        "data": [
+          "Extended Mags",
+          "High Capacity Magazines",
+          "Drum Magazines",
+          "Small Magazine"
+        ]
+      },
+      {
+        "categoryName": "Ammunition",
+        "data": [
+          "Frangible",
+          "Hollowpoint",
+          "Armor Piercing",
+          "Overpressured +P",
+          "High Velocity",
+          "12 Gauge Explosive",
+          "12 Gauge Slug",
+          "12 Gauge Dragon's Breath"
+        ]
+      },
+      {
+        "categoryName": "Crossbow",
+        "data": [
+          "Blastcap 20\" Bolts",
+          "Brightblaze 20\" Bolts",
+          "FTAC Caustic 20\" Bolts"
+        ]
       }
     ]
   },
@@ -857,550 +752,241 @@
     ],
     "attachments": [
       {
-        "name": "Photonic Charge Barrel"
-      },
-      {
-        "name": "JAK Bullseye"
-      },
-      {
-        "name": "Cronen Intlas MSP-12"
-      },
-      {
-        "name": "JAK Glassless Optic"
-      },
-      {
-        "name": "TPS Incendio Reflex"
-      },
-      {
-        "name": "Intlas CAS-14"
-      },
-      {
-        "name": "KR Intlas LSJ-3"
-      },
-      {
-        "name": "XTEN Intlas AS-7"
-      },
-      {
-        "name": "Slate Reflector"
-      },
-      {
-        "name": "XTEN ERX-10 Mini"
-      },
-      {
-        "name": "MORS Dot Sight"
-      },
-      {
-        "name": "Slimline Pro"
-      },
-      {
-        "name": "SZ Mini"
-      },
-      {
-        "name": "Cronen Mini Dot"
-      },
-      {
-        "name": "Cronen Mini Pro"
-      },
-      {
-        "name": "SZ Sigma-IV Optic"
-      },
-      {
-        "name": "SZ Minitac-40"
-      },
-      {
-        "name": "KR Minitac-40 Riser"
-      },
-      {
-        "name": "FSS Spectre Microtherm"
-      },
-      {
-        "name": "QTG Reflex Sight"
-      },
-      {
-        "name": "Caucasus Reflex Sight"
-      },
-      {
-        "name": "Nydar Model 2023"
-      },
-      {
-        "name": "Mk. 3 Reflector"
-      },
-      {
-        "name": "Dragon's Eye Optic"
-      },
-      {
-        "name": "Quarters Classic Reflex"
-      },
-      {
-        "name": "JAK NRG-IV Optic"
-      },
-      {
-        "name": "XRK On-Point Optic"
-      },
-      {
-        "name": "AIM OP-V4"
-      },
-      {
-        "name": "DF105 Reflex Sight"
-      },
-      {
-        "name": "Monocle CT90"
-      },
-      {
-        "name": "Corvus SOL-76"
-      },
-      {
-        "name": "SZ Recharge-DX"
-      },
-      {
-        "name": "SZ SRO-7"
-      },
-      {
-        "name": "Corio RE-X Pro"
-      },
-      {
-        "name": "KR V4 1x Riser"
-      },
-      {
-        "name": "Chrios Holo"
-      },
-      {
-        "name": "Corio Enforcer Optic"
-      },
-      {
-        "name": "SZ Lonewolf Optic"
-      },
-      {
-        "name": "Kazan-Holo"
-      },
-      {
-        "name": "SZ Battle Optic"
-      },
-      {
-        "name": "Corvus Downrange-00"
-      },
-      {
-        "name": "XTEN Angel-40"
-      },
-      {
-        "name": "SZ Holotherm"
-      },
-      {
-        "name": "AW Gen.1 Optic"
-      },
-      {
-        "name": "Corio ELT-10 2.5x"
-      },
-      {
-        "name": "KR Mortis Precision 2.5x"
-      },
-      {
-        "name": "Corio Eagleseye 2.5x"
-      },
-      {
-        "name": "SL Truesight 2.5x"
-      },
-      {
-        "name": "Holo-Craft Optic"
-      },
-      {
-        "name": "KR Marauder 9 Riser"
-      },
-      {
-        "name": "TOS Nightfall 2.5x Thermal Optic"
-      },
-      {
-        "name": "AOK 4.0x RQ-9 Recon"
-      },
-      {
-        "name": "TX4 Havoc"
-      },
-      {
-        "name": "VLK 4.0 Optic"
-      },
-      {
-        "name": "Schlager 3.4x"
-      },
-      {
-        "name": "FORGE TAC Delta 4"
-      },
-      {
-        "name": "Cronen Zero-P Optic"
-      },
-      {
-        "name": "SZ Bullseye Optic"
-      },
-      {
-        "name": "SZ Aggressor-IR Optic"
-      },
-      {
-        "name": "Schlager Night View"
-      },
-      {
-        "name": "VX350 Thermal Optic"
-      },
-      {
-        "name": "Teplo-OP3 Scope"
-      },
-      {
-        "name": "Heinrichter Hybrid Scope"
-      },
-      {
-        "name": "SZ HM5 Precision Hybrid Optic"
-      },
-      {
-        "name": "Corvus Ghostview"
-      },
-      {
-        "name": "DR582 Hybrid Sight"
-      },
-      {
-        "name": "Hybrid Firepoint"
-      },
-      {
-        "name": "SZ Vortex-90"
-      },
-      {
-        "name": "BPZ40 Hybrid"
-      },
-      {
-        "name": "SZ Oscar-9"
-      },
-      {
-        "name": "Angel-40 4.8x"
-      },
-      {
-        "name": "Thermo-Optic x9"
-      },
-      {
-        "name": "Teplo Clear Shot"
-      },
-      {
-        "name": "FTAC Charlie7"
-      },
-      {
-        "name": "HMW-20 Optic"
-      },
-      {
-        "name": "Luca Bandera Scope"
-      },
-      {
-        "name": "DS Farsight 11"
-      },
-      {
-        "name": "3x RFL-Optic"
-      },
-      {
-        "name": "Drexsom Prime-90"
-      },
-      {
-        "name": "ARES Clear Shot"
-      },
-      {
-        "name": "Vigilant-30 C-Iron"
-      },
-      {
-        "name": "Sightmax Clear Shot"
-      },
-      {
-        "name": "DXS Coriolis V4"
-      },
-      {
-        "name": "Lachmann Impact 9"
-      },
-      {
-        "name": "SP-X 80 6.6x"
-      },
-      {
-        "name": "FTAC Locus SP"
-      },
-      {
-        "name": "Luca Field-6"
-      },
-      {
-        "name": "SZ Heatsource 800"
-      },
-      {
-        "name": "Hurricane 9 Variable Optic"
-      },
-      {
-        "name": "SZ Ultra 11.5x"
-      },
-      {
-        "name": "MCPR-300 9.5x"
-      },
-      {
-        "name": "Victus 13x"
-      },
-      {
-        "name": "Imperium 12x"
-      },
-      {
-        "name": "Carrack .300 11x"
-      },
-      {
-        "name": "Akilina LR-Stalk Optic"
-      },
-      {
-        "name": "KR KATT-50 8x Scope"
-      },
-      {
-        "name": "Journeyman-32 Scope"
-      },
-      {
-        "name": "6x Short-Zoom Optic"
-      },
-      {
-        "name": "MORS Hexer Optic"
-      },
-      {
-        "name": "Signal 50 8x"
-      },
-      {
-        "name": "Corio 13x VRS"
-      },
-      {
-        "name": "6.3x-14x Carrack"
-      },
-      {
-        "name": "Corio SZ-HS 800"
-      },
-      {
-        "name": "Raptor-FVM40"
-      },
-      {
-        "name": "JAK Cutthroat"
-      },
-      {
-        "name": "TTL-GS 40"
-      },
-      {
-        "name": "Burrow 500 Drill Charge"
-      },
-      {
-        "name": "JAK Purifier"
-      },
-      {
-        "name": "JAK Limb Ripper"
-      },
-      {
-        "name": "JAK Slash"
-      },
-      {
-        "name": "Paracord Grip"
-      },
-      {
-        "name": "JAK BFB"
-      },
-      {
-        "name": "Quartermaster Suppressor"
-      },
-      {
-        "name": "Extended Mags"
-      },
-      {
-        "name": "High Capacity Magazines"
-      },
-      {
-        "name": "Drum Magazines"
-      },
-      {
-        "name": "Small Magazine"
-      },
-      {
-        "name": "JAK Raven Kit"
-      },
-      {
-        "name": "JAK Nightshade Rifle Kit"
-      },
-      {
-        "name": "Broodmother .45 Kit"
-      },
-      {
-        "name": "JAK Heretic Carbine Kit"
-      },
-      {
-        "name": "JAK Annihilator Bullpup Kit"
-      },
-      {
-        "name": "MCW 6.8 Full-Auto Conversion"
-      },
-      {
-        "name": "JAK Ferocity Carbine Kit"
-      },
-      {
-        "name": "XRK IP-V2 Conversion Kit"
-      },
-      {
-        "name": "WSP Akimbo Brace Stock"
-      },
-      {
-        "name": "JAK Ettin Double Barrel Kit"
-      },
-      {
-        "name": "JAK Thunder LMG Kit"
-      },
-      {
-        "name": "JAK Signal Burst"
-      },
-      {
-        "name": "JAK Beholder Rifle Kit"
-      },
-      {
-        "name": "JAK Headhunter Carbine Conversion"
-      },
-      {
-        "name": "JAK Burnout Kit"
-      },
-      {
-        "name": "JAK Tyrant 762 Kit"
-      },
-      {
-        "name": "JAK Backsaw Kit"
-      },
-      {
-        "name": "JAK Maglift Kit"
-      },
-      {
-        "name": "JAK Outlaw-277 Kit"
-      },
-      {
-        "name": "JAK Revenger Kit"
-      },
-      {
-        "name": "JAK Jawbreaker"
-      },
-      {
-        "name": "JAK Shadow Titan Kit"
-      },
-      {
-        "name": "JAK Patriot"
-      },
-      {
-        "name": "JAK Wardens"
-      },
-      {
-        "name": "JAK Atlas Kit"
-      },
-      {
-        "name": "JAK Harbinger Kit"
-      },
-      {
-        "name": "JAK Gunslinger"
-      },
-      {
-        "name": "JAK Volkh"
-      },
-      {
-        "name": "JAK Scimitar Kit"
-      },
-      {
-        "name": "JAK Thumper-656"
-      },
-      {
-        "name": "JAK Requiem"
-      },
-      {
-        "name": "JAK Decimator"
-      },
-      {
-        "name": "JAK Intimidator"
-      },
-      {
-        "name": "JAK Widemouth Barrel"
-      },
-      {
-        "name": "JAK Cataclysm"
-      },
-      {
-        "name": "JAK Protean"
-      },
-      {
-        "name": "JAK Deathmarch"
-      },
-      {
-        "name": "JAK Devastators"
-      },
-      {
-        "name": "JAK Salvo"
-      },
-      {
-        "name": "JAK Lance"
-      },
-      {
-        "name": "JAK Voltstorm"
-      },
-      {
-        "name": "Low Grain Rounds"
-      },
-      {
-        "name": "High Grain Rounds"
-      },
-      {
-        "name": "Round Nose"
-      },
-      {
-        "name": "Mono"
-      },
-      {
-        "name": "Frangible"
-      },
-      {
-        "name": "Hollowpoint"
-      },
-      {
-        "name": "Armor Piercing"
-      },
-      {
-        "name": "Overpressured +P"
-      },
-      {
-        "name": "High Velocity"
-      },
-      {
-        "name": "Incendiary Ammo"
-      },
-      {
-        "name": "12 Gauge Explosive"
-      },
-      {
-        "name": "12 Gauge Slug"
-      },
-      {
-        "name": "12 Gauge Dragon's Breath"
-      },
-      {
-        "name": "40mm Slug"
-      },
-      {
-        "name": "40mm Sticky"
-      },
-      {
-        "name": "40mm Drill Charge"
-      },
-      {
-        "name": "Brightblaze 20\" Bolts"
-      },
-      {
-        "name": "Blastcap 20\" Bolts"
-      },
-      {
-        "name": "FTAC Caustic 20\" Bolts"
-      },
-      {
-        "name": "Ripper Arrows"
-      },
-      {
-        "name": "Blastcap Arrow"
-      },
-      {
-        "name": "Blaze Arrow"
-      },
-      {
-        "name": "Caustic Arrow"
-      },
-      {
-        "name": "Snapshot Arrow"
+        "categoryName": "Barrel",
+        "data": [
+          "Photonic Charge Barrel"
+        ]
+      },
+      {
+        "categoryName": "Optics",
+        "data": [
+          "JAK Bullseye",
+          "Cronen Intlas MSP-12",
+          "JAK Glassless Optic",
+          "TPS Incendio Reflex",
+          "Intlas CAS-14",
+          "KR Intlas LSJ-3",
+          "XTEN Intlas AS-7",
+          "Slate Reflector",
+          "XTEN ERX-10 Mini",
+          "MORS Dot Sight",
+          "Slimline Pro",
+          "SZ Mini",
+          "Cronen Mini Dot",
+          "Cronen Mini Pro",
+          "SZ Sigma-IV Optic",
+          "SZ Minitac-40",
+          "KR Minitac-40 Riser",
+          "FSS Spectre Microtherm",
+          "QTG Reflex Sight",
+          "Caucasus Reflex Sight",
+          "Nydar Model 2023",
+          "Mk. 3 Reflector",
+          "Dragon's Eye Optic",
+          "Quarters Classic Reflex",
+          "JAK NRG-IV Optic",
+          "XRK On-Point Optic",
+          "AIM OP-V4",
+          "DF105 Reflex Sight",
+          "Monocle CT90",
+          "Corvus SOL-76",
+          "SZ Recharge-DX",
+          "SZ SRO-7",
+          "Corio RE-X Pro",
+          "KR V4 1x Riser",
+          "Chrios Holo",
+          "Corio Enforcer Optic",
+          "SZ Lonewolf Optic",
+          "Kazan-Holo",
+          "SZ Battle Optic",
+          "Corvus Downrange-00",
+          "XTEN Angel-40",
+          "SZ Holotherm",
+          "AW Gen.1 Optic",
+          "Corio ELT-10 2.5x",
+          "KR Mortis Precision 2.5x",
+          "Corio Eagleseye 2.5x",
+          "SL Truesight 2.5x",
+          "Holo-Craft Optic",
+          "KR Marauder 9 Riser",
+          "TOS Nightfall 2.5x Thermal Optic",
+          "AOK 4.0x RQ-9 Recon",
+          "TX4 Havoc",
+          "VLK 4.0 Optic",
+          "Schlager 3.4x",
+          "FORGE TAC Delta 4",
+          "Cronen Zero-P Optic",
+          "SZ Bullseye Optic",
+          "SZ Aggressor-IR Optic",
+          "Schlager Night View",
+          "VX350 Thermal Optic",
+          "Teplo-OP3 Scope",
+          "Heinrichter Hybrid Scope",
+          "SZ HM5 Precision Hybrid Optic",
+          "Corvus Ghostview",
+          "DR582 Hybrid Sight",
+          "Hybrid Firepoint",
+          "SZ Vortex-90",
+          "BPZ40 Hybrid",
+          "SZ Oscar-9",
+          "Angel-40 4.8x",
+          "Thermo-Optic x9",
+          "Teplo Clear Shot",
+          "FTAC Charlie7",
+          "HMW-20 Optic",
+          "Luca Bandera Scope",
+          "DS Farsight 11",
+          "3x RFL-Optic",
+          "Drexsom Prime-90",
+          "ARES Clear Shot",
+          "Vigilant-30 C-Iron",
+          "Sightmax Clear Shot",
+          "DXS Coriolis V4",
+          "Lachmann Impact 9",
+          "SP-X 80 6.6x",
+          "FTAC Locus SP",
+          "Luca Field-6",
+          "SZ Heatsource 800",
+          "Hurricane 9 Variable Optic",
+          "SZ Ultra 11.5x",
+          "MCPR-300 9.5x",
+          "Victus 13x",
+          "Imperium 12x",
+          "Carrack .300 11x",
+          "Akilina LR-Stalk Optic",
+          "KR KATT-50 8x Scope",
+          "Journeyman-32 Scope",
+          "6x Short-Zoom Optic",
+          "MORS Hexer Optic",
+          "Signal 50 8x",
+          "Corio 13x VRS",
+          "6.3x-14x Carrack",
+          "Corio SZ-HS 800",
+          "Raptor-FVM40"
+        ]
+      },
+      {
+        "categoryName": "Stock",
+        "data": [
+          "JAK Cutthroat"
+        ]
+      },
+      {
+        "categoryName": "Underbarrel",
+        "data": [
+          "TTL-GS 40",
+          "Burrow 500 Drill Charge",
+          "JAK Purifier",
+          "JAK Limb Ripper",
+          "JAK Slash",
+          "Paracord Grip"
+        ]
+      },
+      {
+        "categoryName": "Muzzle",
+        "data": [
+          "JAK BFB",
+          "Quartermaster Suppressor"
+        ]
+      },
+      {
+        "categoryName": "Magazine",
+        "data": [
+          "Extended Mags",
+          "High Capacity Magazines",
+          "Drum Magazines",
+          "Small Magazine"
+        ]
+      },
+      {
+        "categoryName": "Conversion Kits",
+        "data": [
+          "JAK Raven Kit",
+          "JAK Nightshade Rifle Kit",
+          "Broodmother .45 Kit",
+          "JAK Heretic Carbine Kit",
+          "JAK Annihilator Bullpup Kit",
+          "MCW 6.8 Full-Auto Conversion",
+          "JAK Ferocity Carbine Kit",
+          "XRK IP-V2 Conversion Kit",
+          "WSP Akimbo Brace Stock",
+          "JAK Ettin Double Barrel Kit",
+          "JAK Thunder LMG Kit",
+          "JAK Signal Burst",
+          "JAK Beholder Rifle Kit",
+          "JAK Headhunter Carbine Conversion",
+          "JAK Burnout Kit",
+          "JAK Tyrant 762 Kit",
+          "JAK Backsaw Kit",
+          "JAK Maglift Kit",
+          "JAK Outlaw-277 Kit",
+          "JAK Revenger Kit",
+          "JAK Jawbreaker",
+          "JAK Shadow Titan Kit",
+          "JAK Patriot",
+          "JAK Wardens",
+          "JAK Atlas Kit",
+          "JAK Harbinger Kit",
+          "JAK Gunslinger",
+          "JAK Volkh",
+          "JAK Scimitar Kit",
+          "JAK Thumper-656",
+          "JAK Requiem",
+          "JAK Decimator",
+          "JAK Intimidator",
+          "JAK Widemouth Barrel",
+          "JAK Cataclysm",
+          "JAK Protean",
+          "JAK Deathmarch",
+          "JAK Devastators",
+          "JAK Salvo",
+          "JAK Lance",
+          "JAK Voltstorm"
+        ]
+      },
+      {
+        "categoryName": "Ammunition",
+        "data": [
+          "Low Grain Rounds",
+          "High Grain Rounds",
+          "Round Nose",
+          "Mono",
+          "Frangible",
+          "Hollowpoint",
+          "Armor Piercing",
+          "Overpressured +P",
+          "High Velocity",
+          "Incendiary Ammo",
+          "12 Gauge Explosive",
+          "12 Gauge Slug",
+          "12 Gauge Dragon's Breath"
+        ]
+      },
+      {
+        "categoryName": "JAK Thumper-556",
+        "data": [
+          "40mm Slug",
+          "40mm Sticky",
+          "40mm Drill Charge"
+        ]
+      },
+      {
+        "categoryName": "Crossbow",
+        "data": [
+          "Brightblaze 20\" Bolts",
+          "Blastcap 20\" Bolts",
+          "FTAC Caustic 20\" Bolts"
+        ]
+      },
+      {
+        "categoryName": "Torque 35",
+        "data": [
+          "Ripper Arrows",
+          "Blastcap Arrow",
+          "Blaze Arrow",
+          "Caustic Arrow",
+          "Snapshot Arrow"
+        ]
       }
     ]
   },
@@ -1586,457 +1172,220 @@
     ],
     "attachments": [
       {
-        "name": "PrismaTech Reflex"
-      },
-      {
-        "name": "Otero Red Dot"
-      },
-      {
-        "name": "Merlin Mini"
-      },
-      {
-        "name": "Willis 3x"
-      },
-      {
-        "name": "Volzhskiy Reflex"
-      },
-      {
-        "name": "OM3 '92 Holo"
-      },
-      {
-        "name": "Accu-Spot Reflex"
-      },
-      {
-        "name": "K&S Red Dot"
-      },
-      {
-        "name": "Otero Micro Dot"
-      },
-      {
-        "name": "Pinpoint Holoscout"
-      },
-      {
-        "name": "Dobrych 4x"
-      },
-      {
-        "name": "Merlin Reflex"
-      },
-      {
-        "name": "Jason Armory 2x"
-      },
-      {
-        "name": "Pinpoint Hybrid"
-      },
-      {
-        "name": "PrismaPoint Hybrid"
-      },
-      {
-        "name": "Redwell Reflex"
-      },
-      {
-        "name": "R&K Multizoom"
-      },
-      {
-        "name": "Accu-Spot Ultra Holo"
-      },
-      {
-        "name": "PrismaTech 4x"
-      },
-      {
-        "name": "Remuda Mini Reflex"
-      },
-      {
-        "name": "Blandwell 7x Scope"
-      },
-      {
-        "name": "Kepler Microflex"
-      },
-      {
-        "name": "Kepler Red Dot"
-      },
-      {
-        "name": "Dobrych MF Reflex"
-      },
-      {
-        "name": "VMF Variable Scope"
-      },
-      {
-        "name": "K&S Thermal Holo"
-      },
-      {
-        "name": "Otero Thermal 2x"
-      },
-      {
-        "name": "Remuda Range Finder"
-      },
-      {
-        "name": "Redwell Custom Zoom"
-      },
-      {
-        "name": "Thermal 6x"
-      },
-      {
-        "name": "Remuda Dual Zoom"
-      },
-      {
-        "name": "Iron Sight"
-      },
-      {
-        "name": "Kepler Pistol Scope"
-      },
-      {
-        "name": "SVD Scope"
-      },
-      {
-        "name": "Hawker Hybrid"
-      },
-      {
-        "name": "Carry Handle Sight"
-      },
-      {
-        "name": "Suppressor"
-      },
-      {
-        "name": "Compensator"
-      },
-      {
-        "name": "Muzzle Brake"
-      },
-      {
-        "name": "Ported Compensator"
-      },
-      {
-        "name": "Modified Choke"
-      },
-      {
-        "name": "Full Choke"
-      },
-      {
-        "name": "Monolithic Suppressor"
-      },
-      {
-        "name": "Gain-Twist Barrel"
-      },
-      {
-        "name": "CHF Barrel"
-      },
-      {
-        "name": "Long Barrel"
-      },
-      {
-        "name": "Short Barrel"
-      },
-      {
-        "name": "Reinforced Barrel"
-      },
-      {
-        "name": "Suppressed Gain-Twist Barrel"
-      },
-      {
-        "name": "Suppressed Long Barrel"
-      },
-      {
-        "name": "Suppressed Reinforced Barrel"
-      },
-      {
-        "name": "Suppressed CHF Barrel"
-      },
-      {
-        "name": "Integrated Suppressor Barrel"
-      },
-      {
-        "name": "Combat Barrel"
-      },
-      {
-        "name": "Heavy Barrel"
-      },
-      {
-        "name": "Quick Load Barrel"
-      },
-      {
-        "name": "Vertical Foregrip"
-      },
-      {
-        "name": "Lightweight Foregrip"
-      },
-      {
-        "name": "Precision Foregrip"
-      },
-      {
-        "name": "Marksman Foregrip"
-      },
-      {
-        "name": "Ranger Foregrip"
-      },
-      {
-        "name": "Weighted Foregrip"
-      },
-      {
-        "name": "Weighted Handguard"
-      },
-      {
-        "name": "Lightweight Handguard"
-      },
-      {
-        "name": "Marksman Handguard"
-      },
-      {
-        "name": "Precision Handguard"
-      },
-      {
-        "name": "Ranger Handguard"
-      },
-      {
-        "name": "Launcher - Standard"
-      },
-      {
-        "name": "M203"
-      },
-      {
-        "name": "GP-25"
-      },
-      {
-        "name": "Launcher - Smoke"
-      },
-      {
-        "name": "Launcher - High Explosive"
-      },
-      {
-        "name": "Launcher - Drill Charge"
-      },
-      {
-        "name": "Crossbar"
-      },
-      {
-        "name": "Crossbow"
-      },
-      {
-        "name": "Lightweight Bipod"
-      },
-      {
-        "name": "Marksman Bipod"
-      },
-      {
-        "name": "G-Grip"
-      },
-      {
-        "name": "Weighted Pad"
-      },
-      {
-        "name": "Lightweight Pad"
-      },
-      {
-        "name": "Ranger Pad"
-      },
-      {
-        "name": "Precision Pad"
-      },
-      {
-        "name": "Marksman Pad"
-      },
-      {
-        "name": "Extended Mag I"
-      },
-      {
-        "name": "Extended Mag II"
-      },
-      {
-        "name": "Extended Mag III"
-      },
-      {
-        "name": "Extended Mag IV"
-      },
-      {
-        "name": "Flip Mag"
-      },
-      {
-        "name": "Fast Mag I"
-      },
-      {
-        "name": "Fast Mag II"
-      },
-      {
-        "name": "Fast Mag III"
-      },
-      {
-        "name": "Explosive Blades"
-      },
-      {
-        "name": "Ricochet Blades"
-      },
-      {
-        "name": "Belt-Fed"
-      },
-      {
-        "name": "Full-Auto Extended Mag"
-      },
-      {
-        "name": "C9 10mm Auto 30-Round Mags"
-      },
-      {
-        "name": "Stripper Clip"
-      },
-      {
-        "name": "Quickdraw Grip"
-      },
-      {
-        "name": "Commando Grip"
-      },
-      {
-        "name": "Assault Grip"
-      },
-      {
-        "name": "Ergonomic Grip"
-      },
-      {
-        "name": "CQB Grip"
-      },
-      {
-        "name": "Quickdraw Lever"
-      },
-      {
-        "name": "Assault Lever"
-      },
-      {
-        "name": "Commando Lever"
-      },
-      {
-        "name": "Ergonomic Lever"
-      },
-      {
-        "name": "CQB Lever"
-      },
-      {
-        "name": "Quickdraw Riser"
-      },
-      {
-        "name": "Combat Riser"
-      },
-      {
-        "name": "Commando Riser"
-      },
-      {
-        "name": "CQB Riser"
-      },
-      {
-        "name": "Ergonomic Riser"
-      },
-      {
-        "name": "Light Riser"
-      },
-      {
-        "name": "Infiltrator Riser"
-      },
-      {
-        "name": "Heavy Riser"
-      },
-      {
-        "name": "Balanced Riser"
-      },
-      {
-        "name": "Heavy Stock"
-      },
-      {
-        "name": "Light Stock"
-      },
-      {
-        "name": "Balanced Stock"
-      },
-      {
-        "name": "Combat Stock"
-      },
-      {
-        "name": "Infiltrator Stock"
-      },
-      {
-        "name": "No Stock"
-      },
-      {
-        "name": "Full Stock"
-      },
-      {
-        "name": "Quickdraw Stock"
-      },
-      {
-        "name": "Agility Stock"
-      },
-      {
-        "name": "Ergonomic Stock"
-      },
-      {
-        "name": "Weighted Stock"
-      },
-      {
-        "name": "Akimbo"
-      },
-      {
-        "name": "Buffer Weight Stock"
-      },
-      {
-        "name": "Overclocked Stock"
-      },
-      {
-        "name": "Balanced Pad"
-      },
-      {
-        "name": "Infiltrator Pad"
-      },
-      {
-        "name": "Combat Pad"
-      },
-      {
-        "name": "Cut-Off Stock"
-      },
-      {
-        "name": "Tactical Laser"
-      },
-      {
-        "name": "Steady Aim Laser"
-      },
-      {
-        "name": "Strelok Laser"
-      },
-      {
-        "name": "Fast Motion Laser"
-      },
-      {
-        "name": "Target Laser"
-      },
-      {
-        "name": "FMJ"
-      },
-      {
-        "name": "Recoil Springs"
-      },
-      {
-        "name": "Overpressured"
-      },
-      {
-        "name": "Rapid Fire"
-      },
-      {
-        "name": "12 Gauge Slug"
-      },
-      {
-        "name": "12 Gauge Dragon's Breath"
-      },
-      {
-        "name": "Burst Fire"
-      },
-      {
-        "name": "AEK-973 Auto Mod"
-      },
-      {
-        "name": "Binary Trigger"
-      },
-      {
-        "name": "SWAT 5.56 Grau Conversion"
-      },
-      {
-        "name": "Goblin Mk2 7.62 Mini-Rocket Conversion"
-      },
-      {
-        "name": "Fire Select - Semi-Auto"
+        "categoryName": "Optic",
+        "data": [
+          "PrismaTech Reflex",
+          "Otero Red Dot",
+          "Merlin Mini",
+          "Willis 3x",
+          "Volzhskiy Reflex",
+          "OM3 '92 Holo",
+          "Accu-Spot Reflex",
+          "K&S Red Dot",
+          "Otero Micro Dot",
+          "Pinpoint Holoscout",
+          "Dobrych 4x",
+          "Merlin Reflex",
+          "Jason Armory 2x",
+          "Pinpoint Hybrid",
+          "PrismaPoint Hybrid",
+          "Redwell Reflex",
+          "R&K Multizoom",
+          "Accu-Spot Ultra Holo",
+          "PrismaTech 4x",
+          "Remuda Mini Reflex",
+          "Blandwell 7x Scope",
+          "Kepler Microflex",
+          "Kepler Red Dot",
+          "Dobrych MF Reflex",
+          "VMF Variable Scope",
+          "K&S Thermal Holo",
+          "Otero Thermal 2x",
+          "Remuda Range Finder",
+          "Redwell Custom Zoom",
+          "Thermal 6x",
+          "Remuda Dual Zoom",
+          "Iron Sight",
+          "Kepler Pistol Scope",
+          "SVD Scope",
+          "Hawker Hybrid",
+          "Carry Handle Sight"
+        ]
+      },
+      {
+        "categoryName": "Muzzle",
+        "data": [
+          "Suppressor",
+          "Compensator",
+          "Muzzle Brake",
+          "Ported Compensator",
+          "Modified Choke",
+          "Full Choke",
+          "Monolithic Suppressor"
+        ]
+      },
+      {
+        "categoryName": "Barrel",
+        "data": [
+          "Gain-Twist Barrel",
+          "CHF Barrel",
+          "Long Barrel",
+          "Short Barrel",
+          "Reinforced Barrel",
+          "Suppressed Gain-Twist Barrel",
+          "Suppressed Long Barrel",
+          "Suppressed Reinforced Barrel",
+          "Suppressed CHF Barrel",
+          "Integrated Suppressor Barrel",
+          "Combat Barrel",
+          "Heavy Barrel",
+          "Quick Load Barrel"
+        ]
+      },
+      {
+        "categoryName": "Underbarrel",
+        "data": [
+          "Vertical Foregrip",
+          "Lightweight Foregrip",
+          "Precision Foregrip",
+          "Marksman Foregrip",
+          "Ranger Foregrip",
+          "Weighted Foregrip",
+          "Weighted Handguard",
+          "Lightweight Handguard",
+          "Marksman Handguard",
+          "Precision Handguard",
+          "Ranger Handguard",
+          "Launcher - Standard",
+          "M203",
+          "GP-25",
+          "Launcher - Smoke",
+          "Launcher - High Explosive",
+          "Launcher - Drill Charge",
+          "Crossbar",
+          "Crossbow",
+          "Lightweight Bipod",
+          "Marksman Bipod",
+          "G-Grip"
+        ]
+      },
+      {
+        "categoryName": "Stock Pad",
+        "data": [
+          "Weighted Pad",
+          "Lightweight Pad",
+          "Ranger Pad",
+          "Precision Pad",
+          "Marksman Pad"
+        ]
+      },
+      {
+        "categoryName": "Magazine",
+        "data": [
+          "Extended Mag I",
+          "Extended Mag II",
+          "Extended Mag III",
+          "Extended Mag IV",
+          "Flip Mag",
+          "Fast Mag I",
+          "Fast Mag II",
+          "Fast Mag III",
+          "Explosive Blades",
+          "Ricochet Blades",
+          "Belt-Fed",
+          "Full-Auto Extended Mag",
+          "C9 10mm Auto 30-Round Mags",
+          "Stripper Clip"
+        ]
+      },
+      {
+        "categoryName": "Rear Grip",
+        "data": [
+          "Quickdraw Grip",
+          "Commando Grip",
+          "Assault Grip",
+          "Ergonomic Grip",
+          "CQB Grip"
+        ]
+      },
+      {
+        "categoryName": "Lever",
+        "data": [
+          "Quickdraw Lever",
+          "Assault Lever",
+          "Commando Lever",
+          "Ergonomic Lever",
+          "CQB Lever"
+        ]
+      },
+      {
+        "categoryName": "Comb",
+        "data": [
+          "Quickdraw Riser",
+          "Combat Riser",
+          "Commando Riser",
+          "CQB Riser",
+          "Ergonomic Riser",
+          "Light Riser",
+          "Infiltrator Riser",
+          "Heavy Riser",
+          "Balanced Riser"
+        ]
+      },
+      {
+        "categoryName": "Stock",
+        "data": [
+          "Heavy Stock",
+          "Light Stock",
+          "Balanced Stock",
+          "Combat Stock",
+          "Infiltrator Stock",
+          "No Stock",
+          "Full Stock",
+          "Quickdraw Stock",
+          "Agility Stock",
+          "Ergonomic Stock",
+          "Weighted Stock",
+          "Akimbo",
+          "Buffer Weight Stock",
+          "Overclocked Stock",
+          "Balanced Pad",
+          "Infiltrator Pad",
+          "Combat Pad",
+          "Cut-Off Stock"
+        ]
+      },
+      {
+        "categoryName": "Laser",
+        "data": [
+          "Tactical Laser",
+          "Steady Aim Laser",
+          "Strelok Laser",
+          "Fast Motion Laser",
+          "Target Laser"
+        ]
+      },
+      {
+        "categoryName": "Fire Mods",
+        "data": [
+          "FMJ",
+          "Recoil Springs",
+          "Overpressured",
+          "Rapid Fire",
+          "12 Gauge Slug",
+          "12 Gauge Dragon's Breath",
+          "Burst Fire",
+          "AEK-973 Auto Mod",
+          "Binary Trigger",
+          "SWAT 5.56 Grau Conversion",
+          "Goblin Mk2 7.62 Mini-Rocket Conversion"
+        ]
+      },
+      {
+        "categoryName": "Unique",
+        "data": [
+          "Fire Select - Semi-Auto"
+        ]
       }
     ]
   }

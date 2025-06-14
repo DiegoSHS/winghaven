@@ -17,6 +17,7 @@ export class AttachmentCategoryService {
   async bulkCreate(attachmentCategories: CreateAttachmentCategoryDto[]) {
     const result = await this.prisma.attachmentCategory.createMany({
       data: attachmentCategories,
+      skipDuplicates: true,
     });
     return result;
   }
