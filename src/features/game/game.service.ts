@@ -17,6 +17,7 @@ export class GameService {
   async bulkCreate(games: CreateGameDto[]) {
     const result = await this.prisma.game.createMany({
       data: games,
+      skipDuplicates: true,
     });
     return result;
   }
@@ -32,7 +33,12 @@ export class GameService {
     });
     return result;
   }
-
+  async findByName(name: string) {
+    const result = await this.prisma.game.findUnique({
+      where: { name },
+    });
+    return result;
+  }
   async update(id: number, updateGameDto: UpdateGameDto) {
     const result = await this.prisma.game.update({
       where: { id },

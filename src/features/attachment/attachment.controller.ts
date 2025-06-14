@@ -14,7 +14,11 @@ export class AttachmentController {
     @Body('gameId', customIdPipe) gameId?: number,
   ) {
     if (Array.isArray(createAttachmentDto)) {
-      return this.attachmentService.bulkCreate(createAttachmentDto, gameId);
+      const newAttachments = gameId ? createAttachmentDto.map(attachment => ({
+        ...attachment,
+        gameId
+      })) : createAttachmentDto
+      return this.attachmentService.bulkCreate(newAttachments);
     }
     return this.attachmentService.create(createAttachmentDto);
   }

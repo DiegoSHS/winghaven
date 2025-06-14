@@ -15,13 +15,9 @@ export class AttachmentService {
     return result;
   }
 
-  async bulkCreate(attachments: CreateAttachmentDto[], gameId?: number) {
-    const attachmentsWithGameId = gameId ? attachments.map(attachment => ({
-      ...attachment,
-      gameId
-    })) : attachments;
+  async bulkCreate(attachments: CreateAttachmentDto[]) {
     const result = await this.prisma.attachment.createMany({
-      data: attachmentsWithGameId,
+      data: attachments,
     });
     return result;
   }

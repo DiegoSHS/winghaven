@@ -15,8 +15,13 @@ export class WeaponController {
     @Body('weaponCategoryId', customIdPipe) weaponCategoryId?: number,
   ) {
     if (Array.isArray(createWeaponDto)) {
-      if (!gameId || !weaponCategoryId) throw new BadRequestException('gameId and categoryId are required for bulk creation');
-      return this.weaponService.bulkCreate(gameId, weaponCategoryId, createWeaponDto);
+      if (!gameId || !weaponCategoryId) return this.weaponService.bulkCreate(createWeaponDto);
+      const transformedWeapons = createWeaponDto.map(weapon => ({
+        ...weapon,
+        gameId,
+        weaponCategoryId,
+      }))
+      return this.weaponService.bulkCreate(transformedWeapons);
     }
     return this.weaponService.create(createWeaponDto);
   }

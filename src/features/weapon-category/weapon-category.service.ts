@@ -17,6 +17,7 @@ export class WeaponCategoryService {
   async bulkCreate(weaponCategories: CreateWeaponCategoryDto[]) {
     const result = await this.prisma.weaponCategory.createMany({
       data: weaponCategories,
+      skipDuplicates: true,
     });
     return result;
   }
@@ -32,7 +33,12 @@ export class WeaponCategoryService {
     });
     return result;
   }
-
+  async findByName(name: string) {
+    const result = await this.prisma.weaponCategory.findUnique({
+      where: { name },
+    });
+    return result;
+  }
   async update(id: number, updateWeaponCategoryDto: UpdateWeaponCategoryDto) {
     const result = await this.prisma.weaponCategory.update({
       where: { id },

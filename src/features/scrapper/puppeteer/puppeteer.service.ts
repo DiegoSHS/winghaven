@@ -1,6 +1,10 @@
 import { Injectable } from "@nestjs/common";
 import { readFile, writeFile } from "fs/promises";
 import puppeteer from "puppeteer";
+import { AttachmentService } from "src/features/attachment/attachment.service";
+import { GameService } from "src/features/game/game.service";
+import { WeaponCategoryService } from "src/features/weapon-category/weapon-category.service";
+import { WeaponService } from "src/features/weapon/weapon.service";
 import { PrismaService } from "src/prisma.service";
 
 function cleanUndefined<T>(value: T): boolean {
@@ -24,7 +28,10 @@ function IncludesAnyText(text: string, phrases: string[]): boolean {
 @Injectable()
 export class PuppeteerService {
     constructor(
-        private readonly prisma: PrismaService
+        private readonly weaponService: WeaponService,
+        private readonly gameService: GameService,
+        private readonly weaponCategoryService: WeaponCategoryService,
+        private readonly attachmentService: AttachmentService,
     ) { }
     generateFileName(url: string): string {
         return url
@@ -142,46 +149,39 @@ export class PuppeteerService {
             const mappedCategories = new Set(weaponCategories.map(cat => cat.name));
             const uniqueCategories = Array.from(mappedCategories)
             const gameCreate = gameTitles.map((item) => {
-                return this.prisma.game.create({
-                    data: item
-                })
+                return item
             })
-            const gameResults = await Promise.all(gameCreate)
-            console.log('Games created:', gameResults.some(game => game.id))
-            const weaponCategoryCreate = uniqueCategories.map((category) => {
-                return this.prisma.weaponCategory.create({
-                    data: category
-                })
-            })
-            const weaponCategoryResults = await Promise.all(weaponCategoryCreate)
-            console.log('Weapon categories created:', weaponCategoryResults.some(cat => cat.id))
+            const gameResults = await this.gameService.bulkCreate(gameCreate)
+            console.log('Games created:', gameResults.count)
+            const weaponCategoryResults = await this.weaponCategoryService.bulkCreate(uniqueCategories)
+            console.log('Weapon categories created:', weaponCategoryResults.count)
+            const games = await this.gameService.findAll()
+            const categories = await this.weaponCategoryService.findAll()
             const weaponCreate = cleanedData.map((item) => {
-                return item.weapons.map((item) => {
-                    return item.weapons.map((weapon) => {
+                const { id: gameId } = games.find(game => game.name === item.game)
+                return item.weapons.map(({ weapons, weaponCategory }) => {
+                    const { id: weaponCategoryId } = categories.find(cat => cat.name === weaponCategory)
+                    return weapons.map(({ name }) => {
                         return {
-                            name: weapon.name,
-                            weaponCategoryId: weaponCategoryResults.find(cat => cat.name === item.weaponCategory).id,
+                            name,
+                            weaponCategoryId,
+                            gameId
                         }
                     })
                 })
             }).flat(3)
-            const weaponResults = await this.prisma.weapon.createMany({
-                data: weaponCreate,
-                skipDuplicates: true
-            })
+            const weaponResults = await this.weaponService.bulkCreate(weaponCreate)
             console.log('Weapons created:', weaponResults.count)
             const attachmentCreate = cleanedData.map((item) => {
                 return item.attachments.map((attachment) => {
+                    const { id } = games.find(game => game.name === item.game)
                     return {
                         name: attachment.name,
-                        gameId: gameResults.find(game => game.name === item.game).id,
+                        gameId: id
                     }
                 })
             }).flat(2)
-            const attachmentResults = await this.prisma.attachment.createMany({
-                data: attachmentCreate,
-                skipDuplicates: true
-            })
+            const attachmentResults = await this.attachmentService.bulkCreate(attachmentCreate)
             console.log('Attachments created:', attachmentResults.count)
             return {
                 insertedData: {
