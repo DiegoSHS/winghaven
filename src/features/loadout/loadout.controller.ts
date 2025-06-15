@@ -6,7 +6,9 @@ import { customIdPipe } from 'src/common/validation';
 
 @Controller('loadout')
 export class LoadoutController {
-  constructor(private readonly loadoutService: LoadoutService) { }
+  constructor(
+    private readonly loadoutService: LoadoutService
+  ) { }
 
   @Post()
   create(@Body() createLoadoutDto: CreateLoadoutDto) {
