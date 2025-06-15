@@ -1,13 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/common';
 import { LoadoutService } from './loadout.service';
 import { CreateLoadoutDto } from './dto/create-loadout.dto';
 import { UpdateLoadoutDto } from './dto/update-loadout.dto';
 import { customIdPipe } from 'src/common/validation';
+import { ImageService } from '../image/image.service';
+import { MultipartFile } from '@fastify/multipart';
 
 @Controller('loadout')
 export class LoadoutController {
   constructor(
-    private readonly loadoutService: LoadoutService
+    private readonly loadoutService: LoadoutService,
+    private readonly imageService: ImageService,
   ) { }
 
   @Post()
@@ -15,13 +18,17 @@ export class LoadoutController {
     return this.loadoutService.create(createLoadoutDto);
   }
 
+  @Post('/temporal')
+  async retrieveLoadoutData(@Req() req: { file: () => Promise<MultipartFile> }) {
+    const file = await req.file();
+    return this.imageService.processLoadout(file)
+  }
+
   @Get()
   findAll(
     @Param('id', customIdPipe) id?: number,
   ) {
-    if (id) {
-      return this.loadoutService.findOne(id);
-    }
+    if (id) return this.loadoutService.findOne(id);
     return this.loadoutService.findAll();
   }
 
