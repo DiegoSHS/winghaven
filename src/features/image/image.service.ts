@@ -3,7 +3,6 @@ import { TesseractService } from "src/features/image/tesseract/tesseract.service
 import { SharpService } from "src/features/image/sharp/sharp.service";
 import { Injectable, InternalServerErrorException } from "@nestjs/common";
 import { extractBuffer } from "src/utils";
-import { CloudinaryService } from "./cloudinary/cloudinary.service";
 import { PrismaService } from "src/prisma.service";
 
 interface AttachmentInfo {
@@ -14,7 +13,6 @@ interface AttachmentInfo {
 @Injectable()
 export class ImageService {
   constructor(
-    private readonly cloudinary: CloudinaryService,
     private readonly tesseract: TesseractService,
     private readonly sharp: SharpService,
     private readonly prisma: PrismaService,
