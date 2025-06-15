@@ -92,48 +92,28 @@ export class CloudinaryService {
     const { error, buffer } = await extractBuffer(file)
     if (error) throw new BadRequestException(error);
     const uploadResult = await this.uploadImage(buffer)
-    return {
-      error: null as string,
-      data: uploadResult,
-      message: 'Image uploaded successfully',
-    }
+    return uploadResult
   }
 
   async findAll() {
     const data = await this.getResources()
-    return {
-      error: null,
-      data,
-      message: 'Resources fetched successfully',
-    }
+    data
   }
 
   findOne(public_id: string) {
     const data = this.getResource(public_id)
-    return {
-      error: null,
-      data,
-      message: 'Resource fetched successfully',
-    }
+    return data
   }
 
   async update(public_id: string, file: MultipartFile) {
     const { error, buffer } = await extractBuffer(file)
     if (error) throw new BadRequestException(error);
     const updateResult = await this.updateImage(public_id, buffer)
-    return {
-      data: updateResult,
-      error: null,
-      message: 'Image updated successfully',
-    }
+    return updateResult
   }
 
   async remove(public_id: string) {
     const data = await this.deleteImage(public_id)
-    return {
-      error: null,
-      data,
-      message: 'Image deleted successfully',
-    }
+    return data
   }
 }

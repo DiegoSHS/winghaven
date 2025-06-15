@@ -80,6 +80,7 @@ model AttachmentCategory {
 model Loadout {
   id                Int                 @id @default(autoincrement())
   name              String
+  image             String
   meta              Boolean             @default(false)
   viable            Boolean             @default(false)
   createdAt         DateTime            @default(now())
