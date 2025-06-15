@@ -118,7 +118,6 @@ export class ImageService {
     }
   }
   async processLoadout(file: MultipartFile) {
-    const { secure_url } = await this.cloudinary.create(file);
     const texts = await this.cropAndRecognize(file);
     const weaponInfo = await this.recognizeArea(file);
     const { weaponName, weaponCategoryName } = this.getWeaponInfo(weaponInfo);
@@ -128,7 +127,6 @@ export class ImageService {
       weapon,
       weaponCategory,
       attachments,
-      secure_url
     }
   }
 }
