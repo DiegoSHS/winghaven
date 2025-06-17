@@ -34,6 +34,12 @@ export class WeaponController {
     return this.weaponService.findAll();
   }
 
+  @Get('search')
+  search(@Param('name') name?: string) {
+    if (!name) return [];
+    if (name) return this.weaponService.filterByName(name);
+  }
+
   @Put(':id')
   update(@Param('id', customIdPipe) id: number, @Body() updateWeaponDto: UpdateWeaponDto) {
     return this.weaponService.update(id, updateWeaponDto);

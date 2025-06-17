@@ -5,7 +5,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
     catch(exception: unknown, host: ArgumentsHost) {
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
-
+        console.log('Exception caught by AllExceptionsFilter:', exception);
         const status =
             exception instanceof HttpException
                 ? exception.getStatus()

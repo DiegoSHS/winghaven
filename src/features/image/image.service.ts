@@ -4,6 +4,8 @@ import { SharpService } from "src/features/image/sharp/sharp.service";
 import { Injectable, InternalServerErrorException } from "@nestjs/common";
 import { extractBuffer } from "src/utils";
 import { PrismaService } from "src/prisma.service";
+import { FuseMode, FuseService } from "./textmatch/fuse.service";
+import { Attachment, AttachmentCategory, Weapon } from "generated/prisma";
 
 interface AttachmentInfo {
   attachmentCategory: string;
@@ -16,6 +18,7 @@ export class ImageService {
     private readonly tesseract: TesseractService,
     private readonly sharp: SharpService,
     private readonly prisma: PrismaService,
+    private readonly fuse: FuseService
   ) { }
   async recognize(file: MultipartFile) {
     const { error, buffer } = await extractBuffer(file)
@@ -33,98 +36,91 @@ export class ImageService {
     return this.tesseract.clear(text)
   }
   async cropAndRecognize(file?: MultipartFile) {
+    console.log('Cropping and recognizing attachments from image...')
+    const width = 250, height = 70;
+    const cropAreasInfo = [
+      { name: 'Optic', area: { left: 1100, top: 215, width: 190, height } },
+      { name: 'Muzzle', area: { left: 60, top: 572, width, height } },
+      { name: 'Barrel', area: { left: 280, top: 355, width: 290, height } },
+      { name: 'Underbarrel', area: { left: 262, top: 734, width, height } },
+      { name: 'Stock', area: { left: 1500, top: 355, width, height } },
+      { name: 'Magazine', area: { left: 840, top: 915, width, height } },
+      { name: 'Rear Grip', area: { left: 1467, top: 845, width, height } },
+      { name: 'Fire Mods', area: { left: 1180, top: 915, width: 250, height: height } },
+      { name: 'Laser', area: { left: 684, top: 215, width, height } },
+      { name: 'Ammunition', area: { left: 523, top: 845, width, height } },
+      { name: 'Aftermarket Parts', area: { left: 60, top: 215, width, height } },
+      { name: 'Comb', area: { left: 1585, top: 734, width, height } }
+    ]
+    console.log('Setting crop zones')
+    const cropZones = cropAreasInfo.map(({ area }) => area);
     const { error, buffer } = await extractBuffer(file)
     if (error) throw new InternalServerErrorException(error)
-    const croppedImages = await this.sharp.cropMultipleZones(buffer, [
-      { left: 60, top: 200, width: 180, height: 100 },
-      { left: 680, top: 200, width: 180, height: 100 },
-      { left: 1100, top: 200, width: 180, height: 100 },
-      { left: 60, top: 560, width: 180, height: 100 },
-      { left: 260, top: 720, width: 180, height: 100 },
-      { left: 840, top: 900, width: 180, height: 100 },
-      { left: 1180, top: 900, width: 180, height: 100 },
-      { left: 1470, top: 840, width: 180, height: 100 },
-      { left: 1506, top: 340, width: 180, height: 100 },
-    ]);
+    console.log('Cropping multiple zones from image...')
+    const croppedImages = await this.sharp.cropMultipleZones(buffer, cropZones);
+    console.log('Recognizing text from cropped images...')
     const recognizedTexts = await this.tesseract.recognizeMultiple(croppedImages)
-    return recognizedTexts.map(({ data }) => this.tesseract.clear(data.text))
-  }
-  getWeaponInfo(text: string) {
-    const noNumbersInfo = text.replace(/\d+/g, '').trim();
-    const splittedInfo = noNumbersInfo.split(' ')
-    const weaponName = splittedInfo.at(0).trim();
-    const sliceIndex = splittedInfo.length < 3 ? -1 : -2;
-    const weaponCategoryName = splittedInfo.slice(sliceIndex).join(' ').trim();
-    return {
-      weaponName,
-      weaponCategoryName
-    }
-  }
-  getWeaponAttachments(detectedTexts: string[]) {
-    return detectedTexts.map(text => {
-      return text
+    console.log('Processing recognized texts...')
+    return recognizedTexts.map(({ data }, index) => {
+      const text = this.tesseract.clear(data.text)
         .split(' ')
         .filter(word => word.match("^[A-z]+$"))
         .filter(word => word.length > 3)
-    })
-      .map(words => {
-        if (words.length === 0) return
-        if (words.length < 2) return
-        return {
-          attachmentCategory: words.filter(word => word !== word.toUpperCase()).join(' '),
-          attachmentName: words.filter(word => word === word.toUpperCase()).join(' ')
-        }
-      })
-      .filter(item => item)
-  }
-  async recognizeAttachments(weaponCategoryName: string, weaponName: string, attachmentList: AttachmentInfo[]) {
-    const weaponCategory = await this.prisma.weaponCategory.findFirst({
-      where: { name: { contains: weaponCategoryName, mode: 'insensitive' } }
-    })
-    const weapon = await this.prisma.weapon.findFirst({
-      where: {
-        name: { contains: weaponName, mode: 'insensitive' },
-        weaponCategoryId: weaponCategory.id ? weaponCategory.id : undefined
+        .filter(word => word === word.toUpperCase())
+        .join(' ')
+      return {
+        attachmentName: text,
+        attachmentCategory: cropAreasInfo[index].name
       }
     })
-    const attachmentOptions = attachmentList.map(item => {
-      return this.prisma.attachmentCategory.findFirst({
-        where: {
-          name: {
-            contains: item.attachmentCategory.toLowerCase(),
-            mode: 'insensitive'
-          }
-        }, include: {
-          attachment: {
-            where: {
-              name: {
-                contains: item.attachmentName.toLowerCase(),
-                mode: 'insensitive'
-              },
-              gameId: weapon ? weapon.gameId : undefined
-            }
-          }
-        }
-      })
-    })
-    const attachmentsResult = await Promise.all(attachmentOptions);
-    const attachments = attachmentsResult.filter(item => item && item.attachment.length > 0)
-    return {
-      weapon,
-      weaponCategory,
-      attachments
+  }
+  getWeaponInfo(text: string) {
+    const noNumbersInfo = text.trim();
+    const splittedInfo = noNumbersInfo.split(' ')
+    if (splittedInfo.length === 0) return
+    if (splittedInfo.length === 1) return {
+      weaponName: splittedInfo[0].trim(),
+      weaponCategoryName: ''
+    }
+    if (splittedInfo.length === 2) return {
+      weaponName: splittedInfo[0].trim(),
+      weaponCategoryName: splittedInfo[1].trim()
+    }
+    if (splittedInfo.length === 3) return {
+      weaponName: splittedInfo[0].trim(),
+      weaponCategoryName: splittedInfo.slice(-2).join(' ').trim()
+    }
+    if (splittedInfo.length === 4) return {
+      weaponName: splittedInfo.slice(0, 2).join(' ').trim(),
+      weaponCategoryName: splittedInfo.slice(-2).join(' ').trim()
+    }
+    if (splittedInfo.length === 5) return {
+      weaponName: splittedInfo.slice(0, 3).join(' ').trim(),
+      weaponCategoryName: splittedInfo.slice(-2).join(' ').trim()
     }
   }
-  async processLoadout(file: MultipartFile) {
-    const texts = await this.cropAndRecognize(file);
-    const weaponInfo = await this.recognizeArea(file);
-    const { weaponName, weaponCategoryName } = this.getWeaponInfo(weaponInfo);
-    const attachmentList = this.getWeaponAttachments(texts);
-    const { weaponCategory, weapon, attachments } = await this.recognizeAttachments(weaponCategoryName, weaponName, attachmentList);
-    return {
-      weapon,
-      weaponCategory,
-      attachments,
-    }
+  async recognizeAttachment(weaponAttachment: string) {
+    const attachment = this.prisma.attachment.findFirst({
+      where: {
+        name: {
+          contains: weaponAttachment.toLowerCase().trim(),
+          mode: "insensitive"
+        }
+      }
+    })
+    return attachment
+  }
+  async recognizeAttachments(attachments: string[]) {
+    return Promise.all(attachments.map(attachment => this.recognizeAttachment(attachment)))
+  }
+  recognizeFuzzyFirst<T>(text: string, items: T[]) {
+    this.fuse.setCollection<T>(items);
+    const result = this.fuse.match<T>(text, "first");
+    return result as T
+  }
+  recognizeFuzzyAll<T>(text: string, items: T[]) {
+    this.fuse.setCollection<T>(items);
+    const result = this.fuse.match<T>(text, "all");
+    return result as T[]
   }
 }

@@ -35,16 +35,26 @@ export class AttachmentService {
     return attachment;
   }
 
-  async findByName(name: string) {
-    const attachment = await this.prisma.attachment.findMany({
+  async findByName(name: string, attachmentCategoryId?: number) {
+    const attachment = await this.prisma.attachment.findFirst({
       where: {
         name: {
           contains: name,
           mode: 'insensitive',
-        }
+        },
+        attachmentCategoryId
       },
     });
     return attachment;
+  }
+
+  async findByGameId(gameId: number) {
+    const attachments = await this.prisma.attachment.findMany({
+      where: {
+        gameId: gameId,
+      },
+    });
+    return attachments;
   }
 
   async update(id: number, updateAttachmentDto: UpdateAttachmentDto) {

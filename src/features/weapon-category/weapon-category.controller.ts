@@ -19,10 +19,10 @@ export class WeaponCategoryController {
   @Get()
   findAll(
     @Query('id', customIdPipe) id?: number,
+    @Query('name') name?: string,
   ) {
-    if (id) {
-      return this.weaponCategoryService.findOne(id);
-    }
+    if (id) return this.weaponCategoryService.findOne(id);
+    if (name) return this.weaponCategoryService.findByName(name);
     return this.weaponCategoryService.findAll();
   }
 

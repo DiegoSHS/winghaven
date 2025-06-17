@@ -5,5 +5,6 @@ import { WeaponCategoryController } from './weapon-category.controller';
 @Module({
   controllers: [WeaponCategoryController],
   providers: [WeaponCategoryService],
+  exports: [WeaponCategoryService],
 })
-export class WeaponCategoryModule {}
+export class WeaponCategoryModule { }

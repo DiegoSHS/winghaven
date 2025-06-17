@@ -20,9 +20,7 @@ export class AttachmentCategoryController {
   findAll(
     @Query('id', customIdPipe) id?: number,
   ) {
-    if (id) {
-      return this.attachmentCategoryService.findOne(id);
-    }
+    if (id) return this.attachmentCategoryService.findOne(id);
     return this.attachmentCategoryService.findAll();
   }
 

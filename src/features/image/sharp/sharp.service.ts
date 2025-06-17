@@ -7,7 +7,9 @@ export class SharpService {
     try {
       return sharp(image)
         .extract(region)
-        .toFormat('png')
+        .greyscale()
+        .threshold(50)
+        .resize({ width: region.width, height: region.height })
         .toBuffer()
     } catch (error) {
       throw new InternalServerErrorException('Error cropping image')

@@ -34,11 +34,26 @@ export class WeaponCategoryService {
     return result;
   }
   async findByName(name: string) {
-    const result = await this.prisma.weaponCategory.findUnique({
-      where: { name },
+    const result = await this.prisma.weaponCategory.findFirst({
+      where: {
+        name: {
+          contains: name.toLowerCase().trim(),
+          mode: 'insensitive',
+        }
+      },
     });
     return result;
   }
+
+  async findAllIncludeWeapons() {
+    const result = await this.prisma.weaponCategory.findMany({
+      include: {
+        weapon: true,
+      },
+    });
+    return result;
+  }
+
   async update(id: number, updateWeaponCategoryDto: UpdateWeaponCategoryDto) {
     const result = await this.prisma.weaponCategory.update({
       where: { id },

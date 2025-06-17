@@ -10,7 +10,6 @@ import { MultipartFile } from '@fastify/multipart';
 export class LoadoutController {
   constructor(
     private readonly loadoutService: LoadoutService,
-    private readonly imageService: ImageService,
   ) { }
 
   @Post()
@@ -21,7 +20,7 @@ export class LoadoutController {
   @Post('/temporal')
   async retrieveLoadoutData(@Req() req: { file: () => Promise<MultipartFile> }) {
     const file = await req.file();
-    return this.imageService.processLoadout(file)
+    return this.loadoutService.processLoadout(file)
   }
 
   @Get()

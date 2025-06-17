@@ -25,9 +25,34 @@ export class WeaponService {
     return result;
   }
 
+
   async findOne(id: number) {
     const result = await this.prisma.weapon.findUnique({
       where: { id },
+    });
+    return result;
+  }
+
+  async findByName(name: string) {
+    const result = await this.prisma.weapon.findFirst({
+      where: {
+        name: {
+          contains: name.toLowerCase().trim(),
+          mode: 'insensitive',
+        },
+      },
+    });
+    return result;
+  }
+
+  async filterByName(name: string) {
+    const result = await this.prisma.weapon.findMany({
+      where: {
+        name: {
+          contains: name.toLowerCase().trim(),
+          mode: 'insensitive',
+        },
+      },
     });
     return result;
   }

@@ -23,7 +23,20 @@ export class AttachmentCategoryService {
   }
 
   async findAll() {
-    const result = await this.prisma.attachmentCategory.findMany();
+    const result = await this.prisma.attachmentCategory.findMany({
+      where: {
+        name: {
+          notIn: [
+            'JAK Thumper-556',
+            'Crossbow',
+            'Lever',
+            'Unique',
+            'Torque 35',
+            'Stock Pad',
+          ],
+        }
+      }
+    });
     return result;
   }
 

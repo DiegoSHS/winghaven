@@ -13,8 +13,8 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter()
   );
-  //app.useGlobalInterceptors(new FormattedResponseInterceptor())
-  //app.useGlobalFilters(new AllExceptionsFilter())
+  app.useGlobalInterceptors(new FormattedResponseInterceptor())
+  app.useGlobalFilters(new AllExceptionsFilter())
   app.enableCors()
   app.register(fastifyMultipart, {
     limits: {

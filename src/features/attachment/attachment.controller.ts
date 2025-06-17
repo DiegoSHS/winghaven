@@ -27,14 +27,16 @@ export class AttachmentController {
   findAll(
     @Query('id', customIdPipe) id?: number,
   ) {
-    if (id) {
-      return this.attachmentService.findOne(id);
-    }
+    if (id) return this.attachmentService.findOne(id);
     return this.attachmentService.findAll();
   }
   @Get('search')
-  search(@Query('name') name) {
-    return this.attachmentService.findByName(name);
+  search(
+    @Query('name') name?: string,
+    @Query('attachmentCategoryId', customIdPipe) attachmentCategoryId?: number,
+  ) {
+    if (!name) return []
+    return this.attachmentService.findByName(name, attachmentCategoryId);
   }
   @Patch(':id')
   update(@Param('id', customIdPipe) id: number, @Body() updateAttachmentDto: UpdateAttachmentDto) {
