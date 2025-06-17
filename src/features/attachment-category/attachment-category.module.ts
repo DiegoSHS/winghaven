@@ -5,5 +5,6 @@ import { AttachmentCategoryController } from './attachment-category.controller';
 @Module({
   controllers: [AttachmentCategoryController],
   providers: [AttachmentCategoryService],
+  exports: [AttachmentCategoryService],
 })
-export class AttachmentCategoryModule {}
+export class AttachmentCategoryModule { }

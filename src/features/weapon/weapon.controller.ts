@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Delete, BadRequestException, Put } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, BadRequestException, Put, Query } from '@nestjs/common';
 import { WeaponService } from './weapon.service';
 import { CreateWeaponDto } from './dto/create-weapon.dto';
 import { UpdateWeaponDto } from './dto/update-weapon.dto';
@@ -35,9 +35,9 @@ export class WeaponController {
   }
 
   @Get('search')
-  search(@Param('name') name?: string) {
+  search(@Query('name') name?: string) {
     if (!name) return [];
-    if (name) return this.weaponService.filterByName(name);
+    return this.weaponService.filterByName(name);
   }
 
   @Put(':id')

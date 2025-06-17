@@ -47,6 +47,13 @@ export class AttachmentCategoryService {
     return result;
   }
 
+  async findByName(name: string) {
+    const result = await this.prisma.attachmentCategory.findFirst({
+      where: { name },
+    });
+    return result;
+  }
+
   async update(
     id: number,
     updateAttachmentCategoryDto: UpdateAttachmentCategoryDto,

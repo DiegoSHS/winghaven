@@ -35,14 +35,25 @@ export class AttachmentService {
     return attachment;
   }
 
-  async findByName(name: string, attachmentCategoryId?: number) {
+  async filterByName(name: string) {
+    const attachments = await this.prisma.attachment.findMany({
+      where: {
+        name: {
+          contains: name,
+          mode: 'insensitive',
+        },
+      },
+    });
+    return attachments;
+  }
+
+  async findByName(name: string) {
     const attachment = await this.prisma.attachment.findFirst({
       where: {
         name: {
           contains: name,
           mode: 'insensitive',
         },
-        attachmentCategoryId
       },
     });
     return attachment;

@@ -8,6 +8,7 @@ import { AttachmentService } from '../attachment/attachment.service';
 import { WeaponCategoryService } from '../weapon-category/weapon-category.service';
 import { WeaponService } from '../weapon/weapon.service';
 import { Attachment } from 'generated/prisma';
+import { AttachmentCategoryService } from '../attachment-category/attachment-category.service';
 
 function capitalizeWord(word) {
   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
@@ -20,6 +21,7 @@ export class LoadoutService {
     private readonly image: ImageService,
     private readonly weaponCategory: WeaponCategoryService,
     private readonly attachment: AttachmentService,
+    private readonly attachmentCategory: AttachmentCategoryService,
     private readonly weapon: WeaponService,
   ) { }
   async create(createLoadoutDto: CreateLoadoutDto) {
@@ -104,34 +106,6 @@ export class LoadoutService {
     return results
   }
 
-  async processLoadoutFuzzy(file: MultipartFile) {
-    const weaponAttachments = await this.image.cropAndRecognize(file);
-    const weaponInfo = await this.image.recognizeArea(file);
-    const { weaponName, weaponCategoryName } = this.image.getWeaponInfo(weaponInfo);
-    const weaponCategory = await this.processWeaponCategoryFuzzy(weaponCategoryName)
-    const weapon = await this.processWeaponFuzzy(weaponName);
-    const attachmentList = await this.attachment.findAll()
-    const attachmentsPromises = weaponAttachments.map(({ attachmentName }) => {
-      if (attachmentName.length === 0) return null;
-      return this.processAttachmentFuzzy(attachmentName, attachmentList)
-    })
-    const attachmentsResults = await Promise.all(attachmentsPromises);
-    const attachmentsObject = weaponAttachments.map(({ attachmentCategory }, i) => {
-      return {
-        attachmentCategory,
-        attachments: attachmentsResults[i]
-      }
-    })
-    const attachments = attachmentsObject.filter(({ attachments }) => attachments !== null);
-    console.log('Attachments found:', attachments);
-    if (attachments.length === 0) return null;
-    return {
-      weapon,
-      weaponCategory,
-      attachments
-    }
-  }
-
   private async processWeaponCategory(text: string) {
     const weaponCategory = await this.weaponCategory.findByName(text);
     if (!weaponCategory) return this.processWeaponCategoryFuzzy(text);
@@ -144,8 +118,9 @@ export class LoadoutService {
     return weapon;
   }
 
-  private async processAttachment(text: string) {
+  private async processAttachment(text: string, fuzzyList: Attachment[]) {
     const attachment = await this.attachment.findByName(text);
+    if (!attachment) return this.processAttachmentFuzzy(text, fuzzyList);
     return attachment;
   }
   async processLoadout(file: MultipartFile) {
@@ -154,18 +129,23 @@ export class LoadoutService {
     const { weaponName, weaponCategoryName } = this.image.getWeaponInfo(weaponInfo);
     const weaponCategory = await this.processWeaponCategory(weaponCategoryName);
     const weapon = await this.processWeapon(weaponName);
+    const attachmentsList = await this.attachment.findAll()
+    const attachmentCategoryPromises = weaponAttachments.map(({ attachmentCategory }) => {
+      return this.attachmentCategory.findByName(attachmentCategory);
+    })
+    const attachmentCategories = await Promise.all(attachmentCategoryPromises);
     const attachmentsPromises = weaponAttachments.map(({ attachmentName }) => {
       if (attachmentName.length === 0) return null;
-      return this.processAttachment(attachmentName);
+      return this.processAttachment(attachmentName, attachmentsList)
     })
-    const attachmentsResults = await Promise.all(attachmentsPromises);
-    const attachmentsObject = weaponAttachments.map(({ attachmentCategory }, i) => {
+    const attachmentResults = await Promise.all(attachmentsPromises);
+    const results = attachmentCategories.map((category, index) => {
       return {
-        attachmentCategory,
-        attachments: attachmentsResults[i]
-      }
+        category,
+        attachment: attachmentResults[index],
+      };
     })
-    const attachments = attachmentsObject.filter(({ attachments }) => attachments !== null);
+    const attachments = results.filter((item) => item?.attachment);
     console.log('Attachments found:', attachments);
     return {
       weapon,

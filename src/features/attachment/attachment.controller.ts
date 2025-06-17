@@ -33,10 +33,9 @@ export class AttachmentController {
   @Get('search')
   search(
     @Query('name') name?: string,
-    @Query('attachmentCategoryId', customIdPipe) attachmentCategoryId?: number,
   ) {
     if (!name) return []
-    return this.attachmentService.findByName(name, attachmentCategoryId);
+    return this.attachmentService.filterByName(name);
   }
   @Patch(':id')
   update(@Param('id', customIdPipe) id: number, @Body() updateAttachmentDto: UpdateAttachmentDto) {
